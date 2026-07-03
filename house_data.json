@@ -1,0 +1,570 @@
+{
+  "parking": {
+    "parkings": "",
+    "parking_facilities": "Parkeervergunningen"
+  },
+  "tmp_num_bedrooms": 3,
+  "num_bathrooms": 1,
+  "tmp_city": "Amsterdam",
+  "counts": {
+    "num_bathrooms": 1,
+    "num_bedrooms": 3,
+    "num_toilets": 1,
+    "total_rooms": 4,
+    "num_livingrooms": 1,
+    "num_kitchens": 1,
+    "num_livinglayers": 1,
+    "num_balconies": 1
+  },
+  "photo_big": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/bc3e47ab.jpg?width=600",
+  "tmp_num_bathrooms": 1,
+  "photos_big": [
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/bc3e47ab.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/07d4b19f.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/410c8fb1.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/6d7c02fe.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/199a151f.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/bf24b4be.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/58abda3b.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/6e4e9108.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/7bd9e3cf.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/9b989768.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/b489a5ac.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/13ab40ff.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/315031c7.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/c849f8fb.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/aa5a89e5.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/1f99d183.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/704f4e52.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/2100305e.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/2f5e4259.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/e9116a11.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/0831cb3d.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/11e7eb8c.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/5c6a0517.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/d7ee46d6.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/ebcccebd.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/5d3422d7.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/e83d24c4.jpg?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/f5b2f619.png?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/ca93bc1f.png?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/bd49bd06.png?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/3052c2ce.png?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/957dce30.png?width=600"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/export/765c070f.png?width=600"
+    }
+  ],
+  "division": "property",
+  "tmp_label": "Leeg",
+  "price": 0,
+  "id": "H03120540",
+  "num_bedrooms": 3,
+  "po-api": "db2d8c9f6dfc45c24d7edce88d09c25f",
+  "tmp_forsale_price": 675000,
+  "addition": "",
+  "financials": {
+    "deposit": 0,
+    "price": 0,
+    "forsale_price": 675000,
+    "forsale_service_costs": null,
+    "price_inc": "0",
+    "required_income": 0,
+    "price_set": "675.000 Kosten koper"
+  },
+  "photo_huge": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/bc3e47ab.jpg?width=100000&fit=bounds",
+  "forrent": false,
+  "surface": 104,
+  "locality": {
+    "addition": "",
+    "street": "Krooswijkhof",
+    "city": "Amsterdam",
+    "number": "28",
+    "zipcode": "1083JB",
+    "district": "Buitenveldert-Oost",
+    "locality": "Aan rustige weg, Aan park, In bosrijke omgeving, Bij OV voorziening",
+    "country": "NL",
+    "floor": 1,
+    "lat": "52.334497057",
+    "lng": "4.8820151"
+  },
+  "photo_small": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/bc3e47ab.jpg?fit=crop&width=100&height=100",
+  "short_stay_price": 0,
+  "street-zip-city": "Krooswijkhof 1083JB Amsterdam",
+  "tmp_streetAddress": "Krooswijkhof",
+  "country_code": "NL",
+  "online_date": "2026-07-02 14:31:26",
+  "tmp_price": 0,
+  "climat_control": {
+    "energy_label": "A",
+    "heating_type": "CV-ketel"
+  },
+  "photos_middle": [
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/bc3e47ab.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/07d4b19f.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/410c8fb1.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/6d7c02fe.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/199a151f.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/bf24b4be.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/58abda3b.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/6e4e9108.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/7bd9e3cf.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/9b989768.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/b489a5ac.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/13ab40ff.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/315031c7.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/c849f8fb.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/aa5a89e5.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/1f99d183.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/704f4e52.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/2100305e.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/2f5e4259.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/e9116a11.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/0831cb3d.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/11e7eb8c.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/5c6a0517.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/d7ee46d6.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/ebcccebd.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/5d3422d7.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/e83d24c4.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/f5b2f619.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/ca93bc1f.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/bd49bd06.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/3052c2ce.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/957dce30.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/765c070f.png?width=100000&fit=bounds"
+    }
+  ],
+  "price_set": "675.000 Kosten koper",
+  "photos_huge": [
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/bc3e47ab.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/07d4b19f.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/410c8fb1.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/6d7c02fe.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/199a151f.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/bf24b4be.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/58abda3b.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/6e4e9108.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/7bd9e3cf.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/9b989768.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/b489a5ac.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/13ab40ff.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/315031c7.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/c849f8fb.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/aa5a89e5.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/1f99d183.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/704f4e52.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/2100305e.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/2f5e4259.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/e9116a11.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/0831cb3d.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/11e7eb8c.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/5c6a0517.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/d7ee46d6.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/ebcccebd.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/5d3422d7.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/e83d24c4.jpg?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/f5b2f619.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/ca93bc1f.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/bd49bd06.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/3052c2ce.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/957dce30.png?width=100000&fit=bounds"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/huge/765c070f.png?width=100000&fit=bounds"
+    }
+  ],
+  "tmp_interior": "",
+  "url_360_presentation": "",
+  "status": "Te koop",
+  "tmp_property_type_2": "Bovenwoning",
+  "attachments": [
+    {
+      "file": "",
+      "name": ""
+    }
+  ],
+  "area_totals": {
+    "surface": 104,
+    "surface_outdoor": 0,
+    "volume_total": 318
+  },
+  "tmp_property_type_1": "Appartement",
+  "int_label": 1,
+  "city": "Amsterdam",
+  "photo_middle": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/middle/bc3e47ab.jpg?width=100000&fit=bounds",
+  "description": "<p>Op geweldige locatie in het geliefde Buitenveldert bieden wij dit royale, recent gerenoveerde en uitstekend onderhouden 4-kamer HOEK appartement aan met zonnig balkon en berging.</p>\n<p>De energiezuinige woning is direct te betrekken en beschikt over energielabel A!<br>Gelegen op de eerste verdieping van een verzorgd appartementencomplex met lift. Met een royale en bijzonder lichte woonkamer, een luxe open leefkeuken drie slaapkamers, een moderne badkamer en een heerlijk zonnig balkon op het zuiden biedt dit appartement een uitzonderlijk hoog wooncomfort.</p>\n<p>Indeling:<br>Via de trap of de verzorgde centrale entree met lift bereikt u de woning op de eerste verdieping. Vanuit de ruime hal zijn alle vertrekken bereikbaar. Direct bij binnenkomst valt de royale leefruimte op. De bijzonder ruime woonkamer is dankzij de grote raampartijen en de gunstige hoekligging heerlijk licht en biedt volop ruimte voor een comfortabele zit- en eetkamer. Vanuit de woonkamer heeft u toegang tot het zonnige balkon op het zuiden, waar u in alle rust kunt genieten van het vrije uitzicht op het groen.</p>\n<p>De luxe open leefkeuken vormt het hart van de woning en is uitgevoerd met een bar-eiland, veel werk- en kastruimte en diverse hoogwaardige inbouwapparatuur, waaronder een inductiekookplaat, afzuigkap, koel-/vriescombinatie, combi-oven en een vaatwasser. De open verbinding met de woonkamer maakt dit een ideale ruimte om te koken en gasten te ontvangen. Het appartement beschikt verder over drie goed bemeten slaapkamers en een berging. De moderne badkamer is luxe afgewerkt en voorzien van een ruime inloop regen douche een stijlvol wastafelmeubel met verlichte spiegel en een designradiator. Naast de badkamer bevindt zich een separaat toilet, uitgevoerd in dezelfde moderne stijl.</p>\n<p>Op de begane grond beschikt het appartement bovendien over een privéberging.</p>\n<p>De erfpacht is afgekocht tot en met 15 december 2036. Voor de periode na 15 december 2036 is reeds gekozen voor de overstap naar eeuwigdurende erfpacht onder gunstige voorwaarden.</p>\n<p>Locatie:<br>De ligging is uitstekend. Op loopafstand bevinden zich het luxe winkelcentrum Gelderlandplein, de Zuidas, Station Amsterdam Zuid, de Vrije Universiteit en Amsterdam UMC (locatie VUmc). Ook het centrum van Amsterdam is binnen circa 10 minuten per fiets bereikbaar. Voor ontspanning liggen het Amstelpark, het Amsterdamse Bos en de Amstel in de directe omgeving. Daarnaast zijn de bereikbaarheid en voorzieningen uitstekend dankzij diverse tram- en busverbindingen en de nabijgelegen uitvalswegen A9 en A10. Parkeren kan direct voor het gebouw.</p>\n<p>Bijzonderheden:<br>-Energielabel A;<br>-Drie slaapkamers;<br>-Luxe open leefkeuken met hoogwaardige inbouwapparatuur;<br>-Luxe badkamer;<br>-Recent gerenoveerd en instapklaar;<br>-Woonoppervlakte: 104 m² NEN 2580 meetrapport aanwezig;<br>-Zonnig balkon;<br>-Berging in de onderbouw;<br>-Gelegen op de eerste verdieping;<br>-Gezonde, professioneel beheerde VvE;<br>-Servicekosten € 276,- per maand;<br>-Verzorgd appartementencomplex met lift;<br>-2 parkeervergunningen mogelijk.</p>\n<p>ENGLISH</p>\n<p>Spacious, recently renovated and excellent maintained 3-bedroom CORNER apartment with a sunny south-facing balcony and private storage, situated in a prime location in the popular and highly sought-after Buitenveldert district.</p>\n<p>This energy-efficient apartment is ready to move into and benefits from an Energy Label A!</p>\n<p>Located on the first floor of a well-maintained apartment building with a lift. Featuring a spacious and exceptionally bright living room, a luxurious open-plan kitchen, three bedrooms, a modern bathroom, and a wonderful south-facing balcony, this apartment offers an exceptional level of living comfort.</p>\n<p>Lay-out:<br>The apartment is accessible via the staircase or the well-maintained central entrance with lift, leading to the first floor. The spacious entrance hall provides access to all rooms. Upon entering, the generous living area immediately stands out. The exceptionally spacious living room benefits from large windows and its favourable corner position, creating an abundance of natural light and offering ample space for both comfortable seating and dining areas. From the living room, you have direct access to the sunny south-facing balcony, where you can enjoy the peaceful surroundings and unobstructed green views.</p>\n<p>The luxurious open-plan kitchen forms the heart of the home and features a breakfast bar island, ample worktop and storage space, and a range of high-quality built-in appliances, including an induction hob, extractor hood, fridge/freezer combination, combination oven, and dishwasher. The open connection with the living room makes this an ideal space for cooking and entertaining guests. The apartment further offers three well-proportioned bedrooms and a storage room. The modern bathroom is finished to a high standard and features a spacious walk-in rain shower, a stylish vanity unit with illuminated mirror, and a designer radiator. Adjacent to the bathroom is a separate toilet, finished in the same contemporary style.</p>\n<p>On the ground floor, the apartment also has a private storage room.</p>\n<p>The current ground lease has been prepaid until 15 December 2036. For the period after 15 December 2036, the switch to perpetual leasehold has already been completed under favourable conditions.</p>\n<p>Location:<br>The location is excellent. Within walking distance you will find the exclusive Gelderlandplein shopping centre, the Zuidas business district, Amsterdam Zuid Station, the Vrije Universiteit, and Amsterdam UMC (VUmc location). Amsterdam's city centre can also be reached within approximately 10 minutes by bicycle. For recreation, the Amstelpark, the Amsterdamse Bos, and the River Amstel are all nearby. In addition, the property enjoys excellent accessibility thanks to various tram and bus connections, as well as the nearby A9 and A10 motorways. Parking is available directly in front of the building. The transfer to perpetual leasehold has already been secured under favourable conditions.</p>\n<p>Features:<br>-Energy Label A;<br>-Three bedrooms;<br>-Luxurious open-plan kitchen with high-quality built-in appliances;<br>-Luxury bathroom;<br>-Recently renovated and ready to move into;<br>-Living area: 104 m² (NEN 2580 measurement report available);<br>-Sunny balcony;<br>-Private storage room on the ground floor;<br>-Located on the first floor;<br>-Healthy and professionally managed Homeowners' Association (VvE);<br>-Service charges: €276 per month;<br>-Well-maintained apartment building with lift;<br>-Eligible for two parking permits.</p>\n",
+  "tmp_property_offer": "0",
+  "interior": "",
+  "geo": {
+    "latitude": "52.334497057",
+    "longitude": "4.8820151"
+  },
+  "tmp_short_stay": "0",
+  "property_offer": {
+    "label": "Leeg",
+    "forrent": false,
+    "forsale": "1",
+    "acceptance_type": "In overleg",
+    "forsale_condition": "Kosten koper",
+    "forsale_price_type": "Vraagprijs"
+  },
+  "price_on_request": false,
+  "property_type": {
+    "property_type_1": "Appartement",
+    "property_type_2": "Bovenwoning",
+    "property_type_3": "Appartement",
+    "building_type": "Bestaande bouw"
+  },
+  "construction": {
+    "buildyear": 1988,
+    "storage_type": "Box",
+    "roof_type": ""
+  },
+  "map_address": {
+    "address": {
+      "streetAddress": "Krooswijkhof",
+      "city": "Amsterdam",
+      "postalCode": "1083JB",
+      "country": "NL"
+    }
+  },
+  "tmp_property_type_3": "Appartement",
+  "tmp_forrent": "0",
+  "available_at": null,
+  "tmp_forsale": "1",
+  "address": "Krooswijkhof 28 1083JB Amsterdam",
+  "tmp_price_set": "675.000 Kosten koper",
+  "photos_small": [
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/bc3e47ab.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/07d4b19f.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/410c8fb1.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/6d7c02fe.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/199a151f.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/bf24b4be.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/58abda3b.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/6e4e9108.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/7bd9e3cf.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/9b989768.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/b489a5ac.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/13ab40ff.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/315031c7.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/c849f8fb.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/aa5a89e5.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/1f99d183.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/704f4e52.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/2100305e.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/2f5e4259.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/e9116a11.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/0831cb3d.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/11e7eb8c.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/5c6a0517.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/d7ee46d6.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/ebcccebd.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/5d3422d7.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/e83d24c4.jpg?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/f5b2f619.png?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/ca93bc1f.png?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/bd49bd06.png?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/3052c2ce.png?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/957dce30.png?fit=crop&width=100&height=100"
+    },
+    {
+      "url": "https://pararius-office-prod.global.ssl.fastly.net/312/files/photos/little/765c070f.png?fit=crop&width=100&height=100"
+    }
+  ],
+  "short_stay": "0",
+  "label": "Leeg",
+  "url": "amsterdam-krooswijkhof-H03120540",
+  "property_type_3": "Appartement",
+  "num_toilets": 1,
+  "forrent_inclusive": {
+    "gas": "0",
+    "water": "0",
+    "electra": "0",
+    "tv": "0",
+    "internet": "0",
+    "service": "0"
+  },
+  "tmp_surface": 104,
+  "streetAddress": "Krooswijkhof",
+  "available_till": null,
+  "garden": {
+    "gardens": "",
+    "main_garden_orientation": ""
+  },
+  "address-id": "Krooswijkhof-28-1083JB-Amsterdam-H03120540",
+  "ranking": 0,
+  "tmp_num_toilets": 1,
+  "facilities": {
+    "has_public_transport": "Ja",
+    "has_open_porch": "",
+    "has_loft": "Nee",
+    "has_cellar": "Nee",
+    "pets_allowed": "",
+    "property_facilities": "Lift,Mechanische ventilatie",
+    "bathroom_facilities": "Inloopdouche,Wastafelmeubel"
+  },
+  "maintenance": {
+    "interior": "",
+    "maintenance_indoor": "uitstekend",
+    "maintenance_outdoor": "uitstekend"
+  },
+  "property_type_2": "Bovenwoning",
+  "property_type_1": "Appartement"
+}
