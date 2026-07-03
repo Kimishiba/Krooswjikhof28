@@ -106,5 +106,12 @@ Features:
 -Well-maintained apartment building with lift;
 -Eligible for two parking permits.
 
+## Floorplans & Area Maps
+You can find high-resolution floorplans in the [floorplans](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans) directory:
 
-
+- **2D Floorplan**: [floorplan_2d.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/floorplan_2d.png)
+- **Area & Measurement Map (GO/BVO)**: [floorplan_areas.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/floorplan_areas.png)
+- **2D Storage Room (Berging)**: [storage_room_2d.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/storage_room_2d.png)
+- **3D Isometric View (Angle 1)**: [floorplan_3d_angle1.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/floorplan_3d_angle1.png)
+- **3D Isometric View (Angle 2)**: [floorplan_3d_angle2.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/floorplan_3d_angle2.png)
+- **3D Isometric View Storage Room**: [storage_room_3d.png](file:///Users/alessandro.longoni/Documents/Antigravity/krooswijkhof28/floorplans/storage_room_3d.png)
