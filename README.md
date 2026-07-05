@@ -1,5 +1,8 @@
 # Krooswijkhof 28, Amsterdam
 
+> [!WARNING]
+> Multiple AI agents might be writing to and modifying this project simultaneously.
+
 ## Overview
 - **Status**: Te koop
 - **Price**: 675.000 Kosten koper
