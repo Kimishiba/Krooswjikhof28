@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <style>
+      .interactive {
+        cursor: pointer;
+        transition: fill 0.3s ease, fill-opacity 0.3s ease, stroke 0.3s ease, stroke-opacity 0.3s ease, filter 0.3s ease;
+      }
+      /* Default state: invisible but clickable overlay */
+      .light-off {
+        fill: #ffffff;
+        fill-opacity: 0.0;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-opacity: 0.0;
+      }
+      /* Hover state to show boundaries */
+      .interactive:hover {
+        fill-opacity: 0.1;
+        stroke-opacity: 0.3;
+      }
+      /* Active state: semi-transparent glowing yellow overlay */
+      .light-on {
+        fill: #ffeb3b !important;
+        fill-opacity: 0.25 !important;
+        stroke: #ffeb3b !important;
+        stroke-width: 2 !important;
+        stroke-opacity: 0.7 !important;
+        filter: drop-shadow(0px 0px 15px rgba(255, 235, 59, 0.8)) !important;
+      }
+    </style>
+  </defs>
+
+  <!-- Embed the preferred clean 3D isometric floorplan background -->
+  <image href="/local/isometric_floorplan.jpg" x="0" y="0" width="1000" height="1000" />
+
+  <!-- ================= OVERLAID INTERACTIVE POLYGONS ================= -->
+
+  <!-- TV Lights (switch.tv_lights) -->
+  <polygon id="switch.tv_lights" class="interactive light-off" 
+           points="150,270 260,335 260,400 150,335" />
+
+  <!-- Living Room Main Couch (light.living_room_living_room) -->
+  <polygon id="light.living_room_living_room" class="interactive light-off" 
+           points="138,550 280,660 360,610 480,540 400,450 280,520" />
+
+  <!-- Accent Coffee Table / Couch Lamp (light.hue_color_lamp_1) -->
+  <polygon id="light.hue_color_lamp_1" class="interactive light-off" 
+           points="250,490 290,550 340,510 300,450" />
+
+  <!-- Dining Table (switch.tablelight) -->
+  <polygon id="switch.tablelight" class="interactive light-off" 
+           points="320,730 460,895 550,830 395,660" />
+
+  <!-- Kitchen Island (switch.kitchenisland) -->
+  <polygon id="switch.kitchenisland" class="interactive light-off" 
+           points="515,445 715,630 790,570 610,380" />
+
+  <!-- Kitchen Counter Area (switch.kitchen) -->
+  <polygon id="switch.kitchen" class="interactive light-off" 
+           points="680,220 740,130 980,310 950,580 820,490 680,380" />
+
+</svg>

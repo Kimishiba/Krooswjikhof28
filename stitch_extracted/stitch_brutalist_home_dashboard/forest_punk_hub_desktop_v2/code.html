@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forest Punk Hub V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e2e3e0",
+                      "surface-bright": "#f9f9f6",
+                      "on-error-container": "#93000a",
+                      "surface": "#f9f9f6",
+                      "tertiary": "#430c1c",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#414940",
+                      "tertiary-fixed": "#ffd9de",
+                      "on-primary-container": "#73ad7b",
+                      "on-tertiary-fixed": "#3b0617",
+                      "on-secondary-container": "#fffbff",
+                      "outline": "#717970",
+                      "on-secondary-fixed-variant": "#802a00",
+                      "on-secondary-fixed": "#370e00",
+                      "surface-container-low": "#f4f4f1",
+                      "on-surface": "#1a1c1a",
+                      "surface-variant": "#e2e3e0",
+                      "surface-tint": "#326a3f",
+                      "secondary-fixed": "#ffdbce",
+                      "surface-container": "#eeeeeb",
+                      "primary-container": "#00401a",
+                      "on-tertiary-fixed-variant": "#723241",
+                      "inverse-primary": "#99d5a0",
+                      "background": "#f9f9f6",
+                      "outline-variant": "#c0c9be",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#db8898",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#00210a",
+                      "surface-container-high": "#e8e8e5",
+                      "secondary-container": "#cd4800",
+                      "on-background": "#1a1c1a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#5e2231",
+                      "inverse-on-surface": "#f1f1ee",
+                      "primary": "#00280e",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb2bf",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#175129",
+                      "inverse-surface": "#2f312f",
+                      "primary-fixed-dim": "#99d5a0",
+                      "primary-fixed": "#b4f1bb",
+                      "secondary-fixed-dim": "#ffb59a",
+                      "surface-dim": "#dadad7",
+                      "secondary": "#ff5c00" /* Mapped to Safety Orange request */
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-page": "32px",
+                      "gutter": "2px",
+                      "container-max": "1440px",
+                      "base_unit": "4px"
+              },
+              "fontFamily": {
+                      "display-2xl": ["Archivo Narrow"],
+                      "body-lg": ["Archivo Narrow"],
+                      "label-mono": ["Space Mono"],
+                      "headline-xl": ["Archivo Narrow"],
+                      "body-md": ["Archivo Narrow"],
+                      "display-lg": ["Archivo Narrow"],
+                      "display-lg-mobile": ["Archivo Narrow"]
+              },
+              "fontSize": {
+                      "display-2xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-xl": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg": ["80px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "display-lg-mobile": ["48px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Archivo Narrow', sans-serif; background-color: #f9f9f6; }
+        .grid-bg {
+            background-size: 24px 24px;
+            background-image: linear-gradient(to right, #00280e 1px, transparent 1px),
+                              linear-gradient(to bottom, #00280e 1px, transparent 1px);
+            opacity: 0.05;
+        }
+        .brutal-border { border: 2px solid #00280e; }
+        .brutal-shadow { box-shadow: 4px 4px 0px 0px #00280e; }
+        .brutal-shadow-hover:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px 0px #00280e; }
+        .brutal-shadow-hover:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #00280e; }
+        .scroll-hide::-webkit-scrollbar { display: none; }
+        .scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-on-surface h-screen w-screen overflow-hidden flex selection:bg-secondary selection:text-white">
+<div class="fixed inset-0 grid-bg pointer-events-none z-0"></div>
+<!-- SideNavBar -->
+<nav class="bg-surface border-r-2 border-primary w-64 md:w-80 flex flex-col h-full p-margin-page gap-4 z-10 shrink-0 relative">
+<div class="flex-1 flex flex-col gap-8">
+<div>
+<h1 class="font-display-2xl text-primary text-6xl md:text-8xl tracking-tighter uppercase leading-none mb-2">SYSTEM<br/>ROOT</h1>
+<p class="font-label-mono text-label-mono text-on-surface-variant">V2.0.4-STABLE</p>
+</div>
+<ul class="flex flex-col gap-2 flex-1">
+<li class="group">
+<a class="bg-secondary text-on-secondary font-bold border-2 border-primary -ml-2 p-3 flex items-center gap-3 brutal-shadow transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dns</span>
+<span class="font-label-mono text-label-mono">01 INFRASTRUCTURE</span>
+</a>
+</li>
+<li class="group">
+<a class="text-primary hover:bg-surface-container-highest p-3 flex items-center gap-3 transition-colors border-2 border-transparent hover:border-primary" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-mono text-label-mono">02 CONTAINERS</span>
+</a>
+</li>
+<li class="group">
+<a class="text-primary hover:bg-surface-container-highest p-3 flex items-center gap-3 transition-colors border-2 border-transparent hover:border-primary" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-mono text-label-mono">03 STORAGE</span>
+</a>
+</li>
+<li class="group">
+<a class="text-primary hover:bg-surface-container-highest p-3 flex items-center gap-3 transition-colors border-2 border-transparent hover:border-primary" href="#">
+<span class="material-symbols-outlined">router</span>
+<span class="font-label-mono text-label-mono">04 NETWORKING</span>
+</a>
+</li>
+<li class="group">
+<a class="text-primary hover:bg-surface-container-highest p-3 flex items-center gap-3 transition-colors border-2 border-transparent hover:border-primary" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-label-mono text-label-mono">05 SECURITY</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-full bg-secondary text-white font-label-mono text-label-mono py-4 border-2 border-primary brutal-shadow brutal-shadow-hover uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">power_settings_new</span>
+                REBOOT SYSTEM
+            </button>
+<div class="flex gap-2">
+<a class="flex-1 text-center py-2 border-2 border-primary text-primary hover:bg-surface-container-highest font-label-mono text-label-mono flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">list_alt</span>
+                    LOGS
+                </a>
+<a class="flex-1 text-center py-2 border-2 border-primary text-primary hover:bg-surface-container-highest font-label-mono text-label-mono flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                    TERMINAL
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 h-full overflow-y-auto overflow-x-hidden p-6 md:p-8 z-10 relative">
+<div class="max-w-container-max mx-auto h-full flex flex-col gap-6">
+<!-- Header area -->
+<header class="flex justify-between items-end border-b-2 border-primary pb-4">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase tracking-tighter leading-none">HUB.01</h2>
+<div class="font-label-mono text-label-mono text-on-surface-variant text-right flex flex-col items-end">
+<span>SYS_TIME: <span id="clock">00:00:00</span></span>
+<span>STATUS: <span class="text-secondary font-bold">ONLINE</span></span>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 auto-rows-[minmax(200px,auto)]">
+<!-- Home Assistant Monitor (Large Orange Block) -->
+<div class="lg:col-span-8 lg:row-span-2 bg-secondary border-2 border-primary brutal-shadow p-1 relative overflow-hidden group flex flex-col">
+<div class="absolute top-0 right-0 bg-primary text-white font-label-mono text-[10px] px-2 py-1 z-20">HA_CORE_V.2.4</div>
+<div class="border-2 border-primary h-full bg-surface-bright flex flex-col relative z-10">
+<div class="border-b-2 border-primary p-3 flex justify-between items-center bg-white">
+<span class="font-headline-xl text-headline-xl text-primary leading-none uppercase">Environment Control</span>
+<span class="material-symbols-outlined text-secondary text-3xl">nest_thermostat</span>
+</div>
+<div class="p-6 flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Sensory blocks -->
+<div class="border-2 border-primary p-4 flex flex-col justify-between hover:bg-secondary hover:text-white transition-colors cursor-pointer group/card">
+<span class="font-label-mono text-label-mono text-on-surface-variant group-hover/card:text-white">LIVING_RM</span>
+<div class="mt-4">
+<div class="font-headline-xl text-headline-xl">22°C</div>
+<div class="font-label-mono text-xs opacity-70">SET: 21°C</div>
+</div>
+</div>
+<div class="border-2 border-primary p-4 flex flex-col justify-between bg-primary-container text-white">
+<span class="font-label-mono text-label-mono">SERVER_RM</span>
+<div class="mt-4">
+<div class="font-headline-xl text-headline-xl">18°C</div>
+<div class="font-label-mono text-xs opacity-70 text-secondary">CRITICAL_COOL</div>
+</div>
+</div>
+<div class="border-2 border-primary p-4 flex flex-col justify-between hover:bg-secondary hover:text-white transition-colors cursor-pointer group/card">
+<span class="font-label-mono text-label-mono text-on-surface-variant group-hover/card:text-white">EXTERIOR</span>
+<div class="mt-4">
+<div class="font-headline-xl text-headline-xl">14°C</div>
+<div class="font-label-mono text-xs opacity-70">HUMIDITY: 65%</div>
+</div>
+</div>
+<div class="border-2 border-primary p-4 flex flex-col justify-between items-center justify-center bg-surface-container-high hover:bg-secondary hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2">add</span>
+<span class="font-label-mono text-label-mono">ADD_NODE</span>
+</div>
+</div>
+<div class="border-t-2 border-primary p-3 bg-white flex justify-between font-label-mono text-xs">
+<span>UPTIME: 94D 12H</span>
+<span class="text-secondary flex items-center gap-1"><span class="w-2 h-2 bg-secondary rounded-full inline-block animate-pulse"></span> SYNCING</span>
+</div>
+</div>
+</div>
+<!-- 3D Printer Status (Dark Green Block) -->
+<div class="lg:col-span-4 lg:row-span-1 bg-primary-container border-2 border-primary brutal-shadow p-4 flex flex-col text-white">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-xl text-3xl uppercase leading-none">PRUSA_MK4</h3>
+<span class="bg-secondary px-2 py-1 font-label-mono text-[10px] text-white">PRINTING: 78%</span>
+</div>
+<div class="border-2 border-white/20 flex-1 relative bg-black overflow-hidden mb-4">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity grayscale" data-alt="A highly detailed, gritty, brutalist 3D printer in a dimly lit industrial room illuminated by a stark, single overhead fluorescent light. The machine is angular and robust, printing a bright safety-orange geometric object. The camera angle is slightly low, emphasizing the heavy machinery aspect. The color palette is dominated by deep blacks, dark forest greens, and intense safety orange accents. The mood is utilitarian and high-tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9JotbltjzytTrL9LTQeqpJehnTrQezweiI-9pVI8XJKNwpzES5u2zcgM2CreKKkSDMT63Rpnc3cf9oGrw1UIwOAoFLymOLH2woPxVznenFGMPtu41LFEoeOnSIT63vRg3h_iBXbR9Ak40iPOXqlmB79hZeHkdXfL27BUZTzSqeLr1yP0dSBSpgxv8dsyMWC7_FaSxj9jqRklctbodkLLBcdmCamRo6493h6yHvTedPARHvPBr6yO3QVSjhkYRwi53DPvcBngz37II"/>
+<div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+<div class="absolute bottom-2 right-2 font-label-mono text-[10px] bg-black/70 px-1 border border-white/30 text-secondary">CAM_01_LIVE</div>
+</div>
+<div class="flex gap-2 font-label-mono text-xs border-t border-white/20 pt-2">
+<div class="flex-1">
+<div class="text-white/50">NOZZLE</div>
+<div>215°C / 215°C</div>
+</div>
+<div class="flex-1">
+<div class="text-white/50">BED</div>
+<div>60°C / 60°C</div>
+</div>
+</div>
+</div>
+<!-- System Log Terminal -->
+<div class="lg:col-span-4 lg:row-span-1 border-2 border-primary bg-surface brutal-shadow flex flex-col">
+<div class="border-b-2 border-primary p-2 bg-primary text-white flex justify-between items-center">
+<span class="font-label-mono text-xs">SYS_LOG &gt; TERMINAL</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-surface"></div>
+<div class="w-2 h-2 bg-surface"></div>
+</div>
+</div>
+<div class="p-3 font-label-mono text-xs overflow-y-auto h-full bg-[#1a1c1a] text-[#b4f1bb] scroll-hide">
+<div class="opacity-70 mb-2">INIT BOOT SEQUENCE...</div>
+<div>[OK] Kernel modules loaded.</div>
+<div>[OK] Mounting filesystems.</div>
+<div class="text-secondary">[WARN] Non-standard protocol detected on port 8080.</div>
+<div>[OK] Starting network interfaces.</div>
+<div>[OK] Starting daemon services.</div>
+<div class="mt-2 text-white">ROOT@HUB.01:~$ <span class="animate-pulse">_</span></div>
+</div>
+</div>
+<!-- Arch Status Blocks (Bottom Row) -->
+<div class="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
+<!-- CPU -->
+<div class="border-2 border-primary bg-white p-3 brutal-shadow flex flex-col justify-between">
+<div class="flex justify-between items-center border-b-2 border-primary pb-2 mb-2">
+<span class="font-label-mono text-xs font-bold">CPU_USAGE</span>
+<span class="material-symbols-outlined text-sm">memory</span>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-headline-xl text-3xl leading-none">42%</span>
+<div class="w-16 h-8 flex items-end gap-1">
+<div class="w-full bg-primary h-[40%]"></div>
+<div class="w-full bg-primary h-[60%]"></div>
+<div class="w-full bg-primary h-[30%]"></div>
+<div class="w-full bg-secondary h-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- RAM -->
+<div class="border-2 border-primary bg-white p-3 brutal-shadow flex flex-col justify-between">
+<div class="flex justify-between items-center border-b-2 border-primary pb-2 mb-2">
+<span class="font-label-mono text-xs font-bold">MEM_ALLOC</span>
+<span class="material-symbols-outlined text-sm">memory_alt</span>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-headline-xl text-3xl leading-none">12.4</span>
+<span class="font-label-mono text-xs">/ 32 GB</span>
+</div>
+</div>
+<!-- DISK -->
+<div class="border-2 border-primary bg-white p-3 brutal-shadow flex flex-col justify-between">
+<div class="flex justify-between items-center border-b-2 border-primary pb-2 mb-2">
+<span class="font-label-mono text-xs font-bold">STORAGE_IO</span>
+<span class="material-symbols-outlined text-sm">hard_drive</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="w-full border border-primary h-4 p-[1px]">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+<span class="font-label-mono text-[10px] text-right">85% FULL</span>
+</div>
+</div>
+<!-- NET -->
+<div class="border-2 border-primary bg-secondary text-white p-3 brutal-shadow flex flex-col justify-between">
+<div class="flex justify-between items-center border-b-2 border-white pb-2 mb-2">
+<span class="font-label-mono text-xs font-bold">NET_TRAFFIC</span>
+<span class="material-symbols-outlined text-sm">wifi_tethering</span>
+</div>
+<div class="flex justify-between font-label-mono text-xs">
+<div class="flex flex-col">
+<span>UP</span>
+<span class="font-bold text-sm">1.2 MB/s</span>
+</div>
+<div class="flex flex-col text-right">
+<span>DWN</span>
+<span class="font-bold text-sm">14.5 MB/s</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body></html>

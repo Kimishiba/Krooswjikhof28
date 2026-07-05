@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HUB.01 - Mobile Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9f6",
+                    "tertiary": "#430c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#414940",
+                    "tertiary-fixed": "#ffd9de",
+                    "on-primary-container": "#73ad7b",
+                    "on-tertiary-fixed": "#3b0617",
+                    "on-secondary-container": "#fffbff",
+                    "outline": "#717970",
+                    "on-secondary-fixed-variant": "#802a00",
+                    "on-secondary-fixed": "#370e00",
+                    "surface-container-low": "#f4f4f1",
+                    "on-surface": "#1a1c1a",
+                    "surface-variant": "#e2e3e0",
+                    "surface-tint": "#326a3f",
+                    "secondary-fixed": "#ffdbce",
+                    "surface-container": "#eeeeeb",
+                    "primary-container": "#00401a",
+                    "on-tertiary-fixed-variant": "#723241",
+                    "inverse-primary": "#99d5a0",
+                    "background": "#f9f9f6",
+                    "outline-variant": "#c0c9be",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#db8898",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#00210a",
+                    "surface-container-high": "#e8e8e5",
+                    "secondary-container": "#cd4800",
+                    "on-background": "#1a1c1a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#5e2231",
+                    "inverse-on-surface": "#f1f1ee",
+                    "primary": "#00280e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb2bf",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#175129",
+                    "inverse-surface": "#2f312f",
+                    "primary-fixed-dim": "#99d5a0",
+                    "primary-fixed": "#b4f1bb",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "surface-dim": "#dadad7",
+                    "secondary": "#a33800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-page": "32px",
+                    "gutter": "2px",
+                    "container-max": "1440px",
+                    "base_unit": "4px"
+            },
+            "fontFamily": {
+                    "display-2xl": ["Archivo Narrow"],
+                    "body-lg": ["Archivo Narrow"],
+                    "label-mono": ["Space Mono"],
+                    "headline-xl": ["Archivo Narrow"],
+                    "body-md": ["Archivo Narrow"],
+                    "display-lg": ["Archivo Narrow"],
+                    "display-lg-mobile": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "display-2xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f6;
+            color: #1a1c1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .brutalist-border {
+            border: 2px solid #00280e;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #00280e;
+        }
+        .heavy-divider {
+            border-bottom: 2px solid #00280e;
+        }
+        .bg-orange-kinetic {
+            background-color: #cd4800;
+        }
+        .text-orange-kinetic {
+            color: #cd4800;
+        }
+        .bg-green-forest {
+            background-color: #00401a;
+        }
+        .text-green-forest {
+            color: #00401a;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen relative pb-16">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-page h-20 w-full z-50 bg-surface w-full top-0 sticky border-b-2 border-primary dark:border-primary-fixed heavy-divider">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed tracking-tighter uppercase">HUB.01</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">settings</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-4 space-y-6 max-w-lg mx-auto w-full mt-4">
+<!-- Grid Container -->
+<div class="flex flex-col gap-6">
+<!-- Card 01: Home Assistant (Kinetic Orange) -->
+<div class="brutalist-border brutalist-shadow bg-orange-kinetic text-on-secondary relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 brutalist-border border-t-0 border-r-0 bg-surface text-primary">
+<span class="font-label-mono text-label-mono">01</span>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-xl text-headline-xl uppercase">HOME_AI</h2>
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">home_iot_device</span>
+</div>
+<div class="space-y-2 font-label-mono text-label-mono uppercase">
+<div class="flex justify-between border-b border-on-secondary border-opacity-30 pb-1">
+<span>STATUS:</span>
+<span class="font-bold">ACTIVE</span>
+</div>
+<div class="flex justify-between border-b border-on-secondary border-opacity-30 pb-1">
+<span>TEMP:</span>
+<span>22°C</span>
+</div>
+<div class="flex justify-between border-b border-on-secondary border-opacity-30 pb-1">
+<span>SEC_MODE:</span>
+<span>ARMED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 02: 3D Printer (Forest Green) -->
+<div class="brutalist-border brutalist-shadow bg-green-forest text-on-primary relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 brutalist-border border-t-0 border-r-0 bg-surface text-primary">
+<span class="font-label-mono text-label-mono">02</span>
+</div>
+<div class="p-6 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-xl text-headline-xl uppercase">PRINTER_1</h2>
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+</div>
+<div class="flex gap-4 mb-4">
+<div class="w-24 h-24 brutalist-border bg-surface shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-300" data-alt="A stylized, high-contrast, top-down isometric view of a futuristic 3D printer printing a complex geometric object in bright kinetic orange filament against a stark dark green background. The lighting is harsh and dramatic, creating sharp, angular shadows. The overall aesthetic is raw, industrial, and distinctly 'Forest Punk', emphasizing mechanical precision and raw material processing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSwfvNf_lWMMzkCpVWFZg1diKn6W6YPgOa9azukj-4eBGEhwAWgTezicpbmrVx9WVrP2RdMFDqBegAo_oxPvcxbHusWiC5dJzLESMAGm7VlovhBH2XwUPslD-UyP5E8qFPKZIdA9DYanLsM0r6A1TiAvZzqq1RDlJivjRx8V_vUrGi4GvOEcNbInJfUUU9q76d6dVdGAwH4dN-uRe4KpVwFl9huUVxH1nadGXoSa2_iLm0AjmBI_C2LmuI6KlQePVs8iW_zyqlzcT4"/>
+</div>
+<div class="flex-grow flex flex-col justify-end space-y-2 font-label-mono text-label-mono uppercase">
+<div class="flex justify-between">
+<span>JOB:</span>
+<span>BRCKET_V4.gcode</span>
+</div>
+<div class="flex justify-between text-secondary-fixed">
+<span>EST:</span>
+<span>01H:14M</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-8 brutalist-border bg-surface relative">
+<div class="h-full bg-secondary-container w-[72%] absolute left-0 top-0 border-r-2 border-primary"></div>
+<div class="absolute inset-0 flex items-center justify-center font-label-mono text-label-mono text-primary font-bold z-10 mix-blend-difference text-white">
+                            72% COMPLETE
+                        </div>
+</div>
+</div>
+</div>
+<!-- Card 03: System Logs Preview (Surface Variant) -->
+<div class="brutalist-border brutalist-shadow bg-surface-container-highest text-primary relative group">
+<div class="absolute top-0 right-0 p-2 brutalist-border border-t-0 border-r-0 bg-surface text-primary">
+<span class="font-label-mono text-label-mono">03</span>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-4 border-b-2 border-primary pb-2">
+<h2 class="font-headline-xl text-headline-xl uppercase">SYS_LOG</h2>
+<span class="material-symbols-outlined text-4xl">database</span>
+</div>
+<div class="space-y-2 font-label-mono text-label-mono uppercase text-xs">
+<div class="flex gap-2">
+<span class="text-secondary opacity-70">[14:02:11]</span>
+<span class="truncate">WARN: EXT_TEMP_SENSOR_DISCONNECT</span>
+</div>
+<div class="flex gap-2">
+<span class="text-secondary opacity-70">[14:00:05]</span>
+<span class="truncate text-green-forest font-bold">INFO: NETWORK_SYNC_OK</span>
+</div>
+<div class="flex gap-2">
+<span class="text-secondary opacity-70">[13:45:22]</span>
+<span class="truncate">INFO: PRINT_JOB_STARTED (PRINTER_1)</span>
+</div>
+<div class="flex gap-2">
+<span class="text-secondary opacity-70">[13:30:00]</span>
+<span class="truncate">INFO: SYSTEM_ROUTINE_CHECK_PASS</span>
+</div>
+</div>
+<button class="mt-4 w-full py-2 brutalist-border bg-surface hover:bg-secondary-container hover:text-on-secondary transition-colors font-label-mono text-label-mono uppercase font-bold text-center">
+                        VIEW_FULL_LOG -&gt;
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch overflow-hidden bg-surface border-t-2 border-primary dark:border-primary-fixed z-50">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-surface-variant h-full w-full border-x border-primary opacity-70 hover:bg-surface-container-highest dark:hover:bg-surface-container-low active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">grid_view</span>
+<span class="font-label-mono text-label-mono mt-1 text-[10px]">01_SYSTEM</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-surface-variant h-full w-full border-x border-primary opacity-70 hover:bg-surface-container-highest dark:hover:bg-surface-container-low active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">precision_manufacturing</span>
+<span class="font-label-mono text-label-mono mt-1 text-[10px]">02_PRINT</span>
+</a>
+<!-- Active -->
+<a class="flex flex-col items-center justify-center bg-secondary dark:bg-secondary-container text-on-secondary dark:text-on-secondary-container h-full w-full border-x border-primary hover:bg-surface-container-highest dark:hover:bg-surface-container-low active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_iot_device</span>
+<span class="font-label-mono text-label-mono mt-1 text-[10px] font-bold">03_HOME</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-surface-variant h-full w-full border-x border-primary opacity-70 hover:bg-surface-container-highest dark:hover:bg-surface-container-low active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">database</span>
+<span class="font-label-mono text-label-mono mt-1 text-[10px]">04_LOGS</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COMMAND_CENTER_V1.0 - NODES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Archivo+Narrow:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#ff5e07",
+                    "tertiary-container": "#007981",
+                    "tertiary": "#00dbe9",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#434656",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "outline": "#8e90a2",
+                    "secondary": "#ffb59a",
+                    "on-primary-fixed": "#001355",
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#802a00",
+                    "secondary-fixed": "#ffdbce",
+                    "surface-bright": "#3a3939",
+                    "surface-container-highest": "#353534",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "on-secondary-fixed": "#370e00",
+                    "primary-fixed": "#dde1ff",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#002387",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-tertiary-fixed": "#002022",
+                    "on-tertiary-container": "#c4faff",
+                    "primary-container": "#2d5bff",
+                    "primary": "#b8c3ff",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "on-primary-container": "#efefff",
+                    "on-tertiary": "#00363a",
+                    "on-error": "#690005",
+                    "inverse-primary": "#104af0",
+                    "surface-tint": "#b8c3ff",
+                    "on-surface-variant": "#c4c5d9",
+                    "on-background": "#e5e2e1",
+                    "background": "#131313",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "surface-variant": "#353534",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-container": "#531900",
+                    "on-secondary": "#5a1b00",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Anton"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg": ["Anton"],
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-xl": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-xl": ["80px", {"lineHeight": "80px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .brutalist-card {
+            background: #1A1A1A;
+            border: 2px solid #8e90a2;
+            transition: all 0.1s ease;
+        }
+        .brutalist-card:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px rgba(45,91,255,1);
+        }
+        .shadow-primary {
+            box-shadow: 4px 4px 0px 0px rgba(45,91,255,1);
+        }
+        .shadow-secondary {
+            box-shadow: 4px 4px 0px 0px rgba(255,94,7,1);
+        }
+        .pixel-grid {
+            background-image: radial-gradient(#434656 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top AppBar (Mobile Implementation) -->
+<header class="bg-background text-primary w-full border-b-2 border-outline shadow-[4px_4px_0px_0px_rgba(45,91,255,1)] flex justify-between items-center px-margin-mobile py-stack-sm sticky top-0 z-50">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tighter">COMMAND_CENTER_V1.0</h1>
+<div class="flex gap-stack-sm">
+<button class="material-symbols-outlined hover:bg-surface-container-high transition-colors p-unit active:translate-y-0.5 active:translate-x-0.5 transition-all">notifications_active</button>
+<button class="material-symbols-outlined hover:bg-surface-container-high transition-colors p-unit active:translate-y-0.5 active:translate-x-0.5 transition-all">account_circle</button>
+</div>
+</header>
+<main class="min-h-screen px-margin-mobile pt-stack-lg pb-32 pixel-grid">
+<!-- Header Status -->
+<div class="mb-stack-lg border-l-4 border-secondary-container pl-stack-md py-stack-sm bg-surface-container-low">
+<p class="font-label-caps text-label-caps text-secondary-container">SYSTEM_STATUS: NOMINAL</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background uppercase">ACTIVE_NODES: 06</h2>
+</div>
+<!-- 2-Column Grid of Status Cards -->
+<div class="grid grid-cols-2 gap-stack-md">
+<!-- Home AI -->
+<div class="brutalist-card p-stack-md shadow-primary border-l-4 border-l-primary-container">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<div class="w-2 h-2 bg-secondary-container animate-pulse"></div>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_01</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">HOME AI</h3>
+<div class="h-1 w-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container w-[72%]"></div>
+</div>
+<p class="font-label-mono text-label-mono text-primary mt-unit">CPU: 72%</p>
+</div>
+<!-- Printer 1 -->
+<div class="brutalist-card p-stack-md shadow-primary">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-outline">print</span>
+<div class="w-2 h-2 bg-outline"></div>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_02</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">PRINTER 1</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant">STATE: IDLE</p>
+</div>
+<!-- Storage -->
+<div class="brutalist-card p-stack-md shadow-secondary border-l-4 border-l-secondary-container">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">database</span>
+<span class="font-label-mono text-label-mono text-secondary-container">94%</span>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_03</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">STORAGE</h3>
+<div class="text-[10px] font-label-mono text-secondary-container leading-none">
+                    CRITICAL_WARN
+                </div>
+</div>
+<!-- Net Traffic -->
+<div class="brutalist-card p-stack-md shadow-primary">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-primary">lan</span>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_04</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">NET TRAFFIC</h3>
+<p class="font-label-mono text-label-mono text-primary">↑ 12MB/s</p>
+<p class="font-label-mono text-label-mono text-tertiary">↓ 45MB/s</p>
+</div>
+<!-- Node Temp -->
+<div class="brutalist-card p-stack-md shadow-primary">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-primary">thermostat</span>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_05</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">NODE TEMP</h3>
+<div class="flex items-baseline gap-unit">
+<span class="font-headline-md text-headline-md text-on-surface">42</span>
+<span class="font-label-caps text-label-caps text-outline">°C</span>
+</div>
+</div>
+<!-- Security -->
+<div class="brutalist-card p-stack-md shadow-secondary bg-surface-container-highest">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<p class="font-label-mono text-label-mono text-outline mb-unit">NODE_06</p>
+<h3 class="font-label-caps text-label-caps text-on-surface mb-stack-sm">SECURITY</h3>
+<p class="font-label-mono text-label-mono text-secondary-container">SHIELD: ACTIVE</p>
+</div>
+</div>
+<!-- Action Button (Contextual for Nodes) -->
+<button class="mt-stack-lg w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-stack-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-stack-sm">
+<span class="material-symbols-outlined">add_circle</span>
+            DEPLOY_NEW_NODE
+        </button>
+</main>
+<!-- Footer - System Log Ready -->
+<footer class="fixed bottom-0 left-0 w-full z-50">
+<!-- Status Bar -->
+<div class="bg-surface-container-lowest text-tertiary font-label-mono text-label-mono flex justify-between items-center px-margin-mobile py-unit border-t-2 border-outline w-full">
+<span>SYSTEM_LOG_TERMINAL_V2.4_READY</span>
+<span class="animate-pulse">● LIVE</span>
+</div>
+<!-- Bottom Nav Bar -->
+<nav class="bg-surface-container-low w-full border-t-2 border-outline flex items-center justify-around py-stack-sm px-unit">
+<!-- Nodes (Active) -->
+<a class="flex flex-col items-center justify-center gap-unit px-stack-sm py-unit bg-primary text-on-primary border-2 border-black shadow-[4px_4px_0px_0px_rgba(255,94,7,1)] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dns</span>
+<span class="font-label-mono text-[10px]">NODES</span>
+</a>
+<!-- Logs -->
+<a class="flex flex-col items-center justify-center gap-unit px-stack-sm py-unit text-on-surface-variant border-2 border-transparent hover:border-outline-variant transition-transform" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-mono text-[10px]">LOGS</span>
+</a>
+<!-- Shell -->
+<a class="flex flex-col items-center justify-center gap-unit px-stack-sm py-unit text-on-surface-variant border-2 border-transparent hover:border-outline-variant transition-transform" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-label-mono text-[10px]">SHELL</span>
+</a>
+<!-- Stats -->
+<a class="flex flex-col items-center justify-center gap-unit px-stack-sm py-unit text-on-surface-variant border-2 border-transparent hover:border-outline-variant transition-transform" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-mono text-[10px]">STATS</span>
+</a>
+</nav>
+</footer>
+<script>
+        // Micro-interaction: Periodic update animation for "live" feel
+        setInterval(() => {
+            const nodeNums = document.querySelectorAll('.font-headline-md');
+            nodeNums.forEach(num => {
+                if (Math.random() > 0.8) {
+                    const currentVal = parseInt(num.textContent);
+                    const variation = Math.floor(Math.random() * 3) - 1;
+                    num.textContent = currentVal + variation;
+                    num.classList.add('text-secondary-container');
+                    setTimeout(() => num.classList.remove('text-secondary-container'), 500);
+                }
+            });
+        }, 3000);
+    </script>
+</body></html>

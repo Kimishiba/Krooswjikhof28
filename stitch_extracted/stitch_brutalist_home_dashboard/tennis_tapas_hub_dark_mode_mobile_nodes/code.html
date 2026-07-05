@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tennis Tapas Hub - Nodes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0e131d",
+                        "surface-container-low": "#171c25",
+                        "on-tertiary": "#283500",
+                        "on-secondary-fixed": "#400100",
+                        "secondary-fixed": "#ffdad4",
+                        "on-secondary-container": "#ff9f8f",
+                        "secondary-container": "#960801",
+                        "inverse-on-surface": "#2b303b",
+                        "surface-container-lowest": "#090e17",
+                        "surface-container-high": "#252a34",
+                        "tertiary-fixed-dim": "#abd600",
+                        "inverse-surface": "#dee2f0",
+                        "on-surface-variant": "#c7c6cc",
+                        "on-surface": "#dee2f0",
+                        "background": "#0e131d",
+                        "tertiary": "#abd600",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#434654",
+                        "on-background": "#dee2f0",
+                        "tertiary-fixed": "#c3f400",
+                        "on-secondary-fixed-variant": "#920700",
+                        "primary": "#c3c6d7",
+                        "secondary": "#ffb4a7",
+                        "primary-container": "#0a0e1a",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#c3c6d7",
+                        "on-primary": "#2c303d",
+                        "on-tertiary-fixed": "#161e00",
+                        "surface-dim": "#0e131d",
+                        "on-primary-container": "#777b8a",
+                        "on-tertiary-container": "#698500",
+                        "on-tertiary-fixed-variant": "#3c4d00",
+                        "on-secondary": "#680300",
+                        "outline-variant": "#46464c",
+                        "outline": "#909096",
+                        "surface-container-highest": "#30353f",
+                        "on-primary-fixed": "#171b28",
+                        "surface-bright": "#343944",
+                        "surface-tint": "#c3c6d7",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#5a5e6d",
+                        "surface-container": "#1b2029",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#0a1000",
+                        "primary-fixed": "#dfe2f3",
+                        "surface-variant": "#30353f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "margin": "32px",
+                        "stack-sm": "8px",
+                        "base": "4px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "body-md": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Anton"],
+                        "headline-xl": ["Anton"],
+                        "headline-lg": ["Anton"],
+                        "data-display": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "data-display": ["24px", { "lineHeight": "1.0", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Utilities for Brutalist Look */
+        .brutalist-card {
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transition: all 0.1s ease-in-out;
+        }
+        .brutalist-card:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+        .brutalist-btn {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transition: all 0.1s ease-in-out;
+        }
+        .brutalist-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter h-16 z-50 bg-surface border-b-2 border-outline shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0">
+<div class="font-headline-lg-mobile text-headline-lg-mobile uppercase text-tertiary tracking-tighter">
+            SYS_HUB_V1.0
+        </div>
+<div class="flex items-center gap-4 text-tertiary">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-highest transition-colors rounded p-1">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-highest transition-colors rounded p-1">terminal</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-highest transition-colors rounded p-1">notification_important</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-gutter pt-8">
+<!-- Header Section -->
+<div class="flex items-center justify-between mb-8 pb-4 border-b-2 border-surface-container-highest">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">HUB.01</h1>
+<div class="bg-tertiary text-on-tertiary font-label-mono text-label-mono px-3 py-1 border-2 border-black brutalist-card flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary animate-pulse"></span>
+                ONLINE
+            </div>
+</div>
+<!-- Nodes Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Node: Home AI -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary fill">smart_toy</span>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Home AI</div>
+<div class="font-data-display text-data-display text-on-surface">ACTIVE</div>
+</div>
+</div>
+<!-- Node: Printer 1 -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-outline">print</span>
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Printer 1</div>
+<div class="font-data-display text-data-display text-on-surface-variant">IDLE</div>
+</div>
+</div>
+<!-- Node: Storage -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary fill">database</span>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Storage</div>
+<div class="font-data-display text-data-display text-on-surface">72%</div>
+</div>
+</div>
+<!-- Node: Net Traffic -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary">lan</span>
+<div class="w-2 h-2 rounded-full bg-tertiary animate-ping"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Net Traffic</div>
+<div class="font-data-display text-data-display text-tertiary">HIGH</div>
+</div>
+</div>
+<!-- Node: Node Temp -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary">device_thermostat</span>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Node Temp</div>
+<div class="font-data-display text-data-display text-secondary">22°C</div>
+</div>
+</div>
+<!-- Node: Security -->
+<div class="bg-surface-container border-2 border-black p-4 flex flex-col justify-between h-32 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary fill">security</span>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-outline mb-1">Security</div>
+<div class="font-data-display text-data-display text-on-surface">ARMED</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-secondary text-on-secondary rounded-none flex items-center justify-center brutalist-btn z-40">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-surface border-t-4 border-outline shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<!-- Active Tab: Nodes -->
+<a class="flex flex-col items-center justify-center bg-secondary text-on-secondary p-2 border-2 border-black w-16 h-16 translate-y-1 transition-all" href="#">
+<span class="material-symbols-outlined fill">settings_input_component</span>
+<span class="font-label-mono text-label-mono text-[10px] mt-1">Nodes</span>
+</a>
+<!-- Inactive Tab: Logs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 w-16 h-16 hover:bg-surface-container-high transition-colors border-2 border-transparent" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-label-mono text-label-mono text-[10px] mt-1">Logs</span>
+</a>
+<!-- Inactive Tab: Shell -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 w-16 h-16 hover:bg-surface-container-high transition-colors border-2 border-transparent" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-label-mono text-label-mono text-[10px] mt-1">Shell</span>
+</a>
+<!-- Inactive Tab: Stats -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 w-16 h-16 hover:bg-surface-container-high transition-colors border-2 border-transparent" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-mono text-label-mono text-[10px] mt-1">Stats</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,699 @@
+{
+  "home_assistant": {
+    "arch": "x86_64",
+    "dev": false,
+    "docker": true,
+    "hassio": true,
+    "installation_type": "Home Assistant OS",
+    "os_name": "Linux",
+    "os_version": "6.18.35-haos",
+    "python_version": "3.14.5",
+    "timezone": "Europe/Amsterdam",
+    "version": "2026.6.4",
+    "virtualenv": false,
+    "container_arch": "amd64",
+    "supervisor": "2026.06.2",
+    "host_os": "Home Assistant OS 18.0",
+    "docker_version": "29.5.3",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "dreame_vacuum": {
+      "documentation": "https://github.com/Tasshack/dreame-vacuum",
+      "version": "v1.0.11",
+      "requirements": [
+        "pillow",
+        "numpy",
+        "pybase64",
+        "requests",
+        "pycryptodome",
+        "python-miio",
+        "mini-racer",
+        "paho-mqtt"
+      ]
+    },
+    "nefiteasy": {
+      "documentation": "https://github.com/ksya/ha-nefiteasy",
+      "version": "0.4.8",
+      "requirements": [
+        "aionefit-updated==0.17"
+      ]
+    },
+    "hacs": {
+      "documentation": "https://hacs.xyz/docs/use/",
+      "version": "2.0.5",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    }
+  },
+  "integration_manifest": {
+    "domain": "tuya",
+    "name": "Tuya",
+    "codeowners": [
+      "Tuya",
+      "zlinoliver"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/tuya",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_sharing"
+    ],
+    "requirements": [
+      "tuya-device-handlers==0.0.22",
+      "tuya-device-sharing-sdk==0.2.8"
+    ],
+    "is_built_in": true,
+    "overwrites_built_in": false
+  },
+  "setup_times": {},
+  "data": {
+    "endpoint": "https://apigw.tuyaeu.com",
+    "terminal_id": "1782723864333Z7t0kP",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "id": "bf252d5f5d5db5e7d1mifp",
+    "name": "LSC PTZ Camera Dualband",
+    "category": "sp",
+    "product_id": "rogprwflblumx2co",
+    "product_name": "LSC PTZ Camera Dualband",
+    "online": true,
+    "sub": false,
+    "time_zone": "+02:00",
+    "active_time": "2026-06-17T11:57:20+00:00",
+    "create_time": "2026-06-17T11:57:20+00:00",
+    "update_time": "2026-06-17T11:57:20+00:00",
+    "function": {
+      "basic_flip": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "basic_osd": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "basic_private": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "motion_sensitivity": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      "basic_nightvision": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      "sd_format": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "ptz_stop": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "ptz_control": {
+        "type": "Enum",
+        "value": "{\"range\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"0\"]}"
+      },
+      "ptz_calibration": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "motion_switch": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "decibel_switch": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "decibel_sensitivity": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\"]}"
+      },
+      "record_switch": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "record_mode": {
+        "type": "Enum",
+        "value": "{\"range\":[\"1\",\"2\"]}"
+      },
+      "siren_switch": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "motion_tracking": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "motion_area_switch": {
+        "type": "Boolean",
+        "value": "{}"
+      },
+      "motion_area": {
+        "type": "String",
+        "value": "{\"maxlen\":255}"
+      },
+      "humanoid_filter": {
+        "type": "Boolean",
+        "value": "{}"
+      }
+    },
+    "local_strategy": {},
+    "status_range": {
+      "basic_flip": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "basic_osd": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "basic_private": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "motion_sensitivity": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\",\"2\"]}",
+        "report_type": null
+      },
+      "basic_nightvision": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\",\"2\"]}",
+        "report_type": null
+      },
+      "sd_storge": {
+        "type": "String",
+        "value": "{\"maxlen\":255}",
+        "report_type": null
+      },
+      "sd_status": {
+        "type": "Integer",
+        "value": "{\"unit\":\"\",\"min\":1,\"max\":5,\"scale\":1,\"step\":1}",
+        "report_type": null
+      },
+      "sd_format": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "movement_detect_pic": {
+        "type": "Raw",
+        "value": "{}",
+        "report_type": null
+      },
+      "ptz_stop": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "sd_format_state": {
+        "type": "Integer",
+        "value": "{\"unit\":\"\",\"min\":-20000,\"max\":20000,\"scale\":1,\"step\":1}",
+        "report_type": null
+      },
+      "ptz_control": {
+        "type": "Enum",
+        "value": "{\"range\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"0\"]}",
+        "report_type": null
+      },
+      "ptz_calibration": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "motion_switch": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "decibel_switch": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "decibel_sensitivity": {
+        "type": "Enum",
+        "value": "{\"range\":[\"0\",\"1\"]}",
+        "report_type": null
+      },
+      "record_switch": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "record_mode": {
+        "type": "Enum",
+        "value": "{\"range\":[\"1\",\"2\"]}",
+        "report_type": null
+      },
+      "siren_switch": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "motion_tracking": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "motion_area_switch": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "motion_area": {
+        "type": "String",
+        "value": "{\"maxlen\":255}",
+        "report_type": null
+      },
+      "humanoid_filter": {
+        "type": "Boolean",
+        "value": "{}",
+        "report_type": null
+      },
+      "alarm_message": {
+        "type": "String",
+        "value": "{}",
+        "report_type": null
+      }
+    },
+    "status": {
+      "basic_flip": false,
+      "basic_osd": true,
+      "basic_private": false,
+      "motion_sensitivity": "1",
+      "basic_nightvision": "0",
+      "sd_storge": "31154176|30889984|264192",
+      "sd_status": 1,
+      "sd_format": false,
+      "movement_detect_pic": "**REDACTED**",
+      "ptz_stop": true,
+      "sd_format_state": 0,
+      "ptz_control": "7",
+      "ptz_calibration": false,
+      "motion_switch": true,
+      "decibel_switch": false,
+      "decibel_sensitivity": "0",
+      "record_switch": true,
+      "record_mode": "1",
+      "siren_switch": false,
+      "motion_tracking": false,
+      "motion_area_switch": false,
+      "motion_area": "{\"num\":1,\"region0\":{\"x\":0, \"y\":0, \"xlen\":100, \"ylen\":100 }}",
+      "humanoid_filter": false,
+      "alarm_message": "**REDACTED**"
+    },
+    "set_up": true,
+    "support_local": false,
+    "quirk": null,
+    "warnings": null,
+    "home_assistant": {
+      "name": "LSC PTZ Camera Dualband",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": [
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "doorbell",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "event.lsc_ptz_camera_dualband_doorbell_message",
+            "state": "unknown",
+            "attributes": {
+              "event_types": [
+                "triggered"
+              ],
+              "event_type": null,
+              "device_class": "doorbell",
+              "friendly_name": "LSC PTZ Camera Dualband Doorbell message"
+            },
+            "last_changed": "2026-06-29T09:04:25.646117+00:00",
+            "last_reported": "2026-06-29T09:04:25.646552+00:00",
+            "last_updated": "2026-06-29T09:04:25.646117+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "select.lsc_ptz_camera_dualband_sound_detection_sensitivity",
+            "state": "0",
+            "attributes": {
+              "options": [
+                "0",
+                "1"
+              ],
+              "friendly_name": "LSC PTZ Camera Dualband Sound detection sensitivity"
+            },
+            "last_changed": "2026-06-29T09:04:25.656736+00:00",
+            "last_reported": "2026-06-29T09:04:25.657108+00:00",
+            "last_updated": "2026-06-29T09:04:25.656736+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "select.lsc_ptz_camera_dualband_record_mode",
+            "state": "1",
+            "attributes": {
+              "options": [
+                "1",
+                "2"
+              ],
+              "friendly_name": "LSC PTZ Camera Dualband Record mode"
+            },
+            "last_changed": "2026-06-29T09:04:25.657923+00:00",
+            "last_reported": "2026-06-29T09:04:25.658219+00:00",
+            "last_updated": "2026-06-29T09:04:25.657923+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "select.lsc_ptz_camera_dualband_night_vision",
+            "state": "0",
+            "attributes": {
+              "options": [
+                "0",
+                "1",
+                "2"
+              ],
+              "friendly_name": "LSC PTZ Camera Dualband Night vision"
+            },
+            "last_changed": "2026-06-29T09:04:25.674122+00:00",
+            "last_reported": "2026-06-29T09:04:25.674475+00:00",
+            "last_updated": "2026-06-29T09:04:25.674122+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "select.lsc_ptz_camera_dualband_motion_detection_sensitivity",
+            "state": "1",
+            "attributes": {
+              "options": [
+                "0",
+                "1",
+                "2"
+              ],
+              "friendly_name": "LSC PTZ Camera Dualband Motion detection sensitivity"
+            },
+            "last_changed": "2026-06-29T09:04:25.675375+00:00",
+            "last_reported": "2026-06-29T09:04:25.675607+00:00",
+            "last_updated": "2026-06-29T09:04:25.675375+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "siren.lsc_ptz_camera_dualband_siren",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Siren",
+              "supported_features": 3
+            },
+            "last_changed": "2026-06-29T09:04:40.002191+00:00",
+            "last_reported": "2026-06-29T09:04:40.002191+00:00",
+            "last_updated": "2026-06-29T09:04:40.002191+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_sound_detection",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Sound detection"
+            },
+            "last_changed": "2026-06-29T09:04:25.692941+00:00",
+            "last_reported": "2026-06-29T09:04:25.693247+00:00",
+            "last_updated": "2026-06-29T09:04:25.692941+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_video_recording",
+            "state": "on",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Video recording"
+            },
+            "last_changed": "2026-06-29T09:04:25.694189+00:00",
+            "last_reported": "2026-06-29T09:04:25.703756+00:00",
+            "last_updated": "2026-06-29T09:04:25.694189+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_privacy_mode",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Privacy mode"
+            },
+            "last_changed": "2026-06-29T09:04:25.704962+00:00",
+            "last_reported": "2026-06-29T09:04:25.705241+00:00",
+            "last_updated": "2026-06-29T09:04:25.704962+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_flip",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Flip"
+            },
+            "last_changed": "2026-06-29T09:04:25.708351+00:00",
+            "last_reported": "2026-06-29T09:04:25.708586+00:00",
+            "last_updated": "2026-06-29T09:04:25.708351+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_time_watermark",
+            "state": "on",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Time watermark"
+            },
+            "last_changed": "2026-06-29T09:04:25.711530+00:00",
+            "last_reported": "2026-06-29T09:04:25.720744+00:00",
+            "last_updated": "2026-06-29T09:04:25.711530+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_motion_tracking",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Motion tracking"
+            },
+            "last_changed": "2026-06-29T09:04:25.723159+00:00",
+            "last_reported": "2026-06-29T09:04:25.723476+00:00",
+            "last_updated": "2026-06-29T09:04:25.723159+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_motion_alarm",
+            "state": "on",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Motion alarm"
+            },
+            "last_changed": "2026-06-29T09:04:25.724250+00:00",
+            "last_reported": "2026-06-29T09:04:25.724529+00:00",
+            "last_updated": "2026-06-29T09:04:25.724250+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": "config",
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "switch.lsc_ptz_camera_dualband_use_motion_detection_zone",
+            "state": "off",
+            "attributes": {
+              "friendly_name": "LSC PTZ Camera Dualband Use motion detection zone"
+            },
+            "last_changed": "2026-06-29T09:04:25.725483+00:00",
+            "last_reported": "2026-06-29T09:04:25.725707+00:00",
+            "last_updated": "2026-06-29T09:04:25.725483+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "camera.lsc_ptz_camera_dualband",
+            "state": "recording",
+            "attributes": {
+              "access_token": "ca0f6e0dd953a021bd096ea7e012202f6bdfaf473b22dbfce34723c61b9a8794",
+              "model_name": "LSC PTZ Camera Dualband",
+              "brand": "Tuya",
+              "motion_detection": true,
+              "entity_picture": "**REDACTED**",
+              "friendly_name": "LSC PTZ Camera Dualband",
+              "supported_features": 2
+            },
+            "last_changed": "2026-06-29T09:04:25.740702+00:00",
+            "last_reported": "2026-06-29T09:04:36.805872+00:00",
+            "last_updated": "2026-06-29T09:04:25.740702+00:00"
+          }
+        }
+      ]
+    }
+  },
+  "issues": []
+}

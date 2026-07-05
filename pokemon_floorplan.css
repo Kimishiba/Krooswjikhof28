@@ -1,0 +1,29 @@
+/* Darken the background image to simulate a "lights off" ambient state */
+svg image {
+  filter: brightness(0.55);
+  transition: filter 0.3s ease;
+}
+
+.interactive {
+  cursor: pointer;
+  transition: fill 0.3s ease, fill-opacity 0.3s ease, stroke-opacity 0.3s ease, filter 0.3s ease;
+}
+
+.light-off {
+  fill: transparent !important;
+  fill-opacity: 0.0 !important;
+  stroke: transparent !important;
+  stroke-opacity: 0.0 !important;
+}
+
+.interactive:hover {
+  fill: #ffffff !important;
+  fill-opacity: 0.15 !important;
+  stroke: #ffffff !important;
+  stroke-opacity: 0.25 !important;
+}
+
+.light-on {
+  fill: url(#light-glow-radial) !important;
+  stroke: none !important;
+}

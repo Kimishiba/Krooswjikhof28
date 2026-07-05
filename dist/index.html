@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>COMMAND_CENTER_V1.1 | HOME PORTAL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@400;700&amp;family=Archivo+Narrow:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#ff5e07",
+            "tertiary-container": "#007981",
+            "tertiary": "#00dbe9",
+            "surface-container": "#201f1f",
+            "outline-variant": "#434656",
+            "tertiary-fixed-dim": "#00dbe9",
+            "outline": "#8e90a2",
+            "secondary": "#ffb59a",
+            "on-primary-fixed": "#001355",
+            "tertiary-fixed": "#7df4ff",
+            "surface-container-high": "#2a2a2a",
+            "error-container": "#93000a",
+            "surface-container-low": "#1c1b1b",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#802a00",
+            "secondary-fixed": "#ffdbce",
+            "surface-bright": "#3a3939",
+            "surface-container-highest": "#353534",
+            "inverse-surface": "#e5e2e1",
+            "surface-dim": "#131313",
+            "on-secondary-fixed": "#370e00",
+            "primary-fixed": "#dde1ff",
+            "surface": "#131313",
+            "surface-container-lowest": "#0e0e0e",
+            "on-primary": "#002387",
+            "on-tertiary-fixed-variant": "#004f54",
+            "on-tertiary-fixed": "#002022",
+            "on-tertiary-container": "#c4faff",
+            "primary-container": "#2d5bff",
+            "primary": "#b8c3ff",
+            "on-surface": "#e5e2e1",
+            "on-primary-fixed-variant": "#0035bd",
+            "on-primary-container": "#efefff",
+            "on-tertiary": "#00363a",
+            "on-secondary": "#5a1b00",
+            "error": "#ffb4ab"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.0rem",
+            "lg": "0.0rem",
+            "xl": "0.0rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "stack-lg": "32px",
+            "margin-mobile": "16px",
+            "margin-desktop": "40px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "unit": "4px"
+          },
+          "fontFamily": {
+            "headline-md": ["Anton"],
+            "label-mono": ["JetBrains Mono"],
+            "headline-lg": ["Anton"],
+            "body-lg": ["Archivo Narrow"],
+            "headline-xl": ["Anton"],
+            "headline-lg-mobile": ["Anton"],
+            "label-caps": ["JetBrains Mono"],
+            "body-md": ["Archivo Narrow"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "headline-lg": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+            "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+            "headline-xl": ["80px", {"lineHeight": "80px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+            "label-caps": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background overflow-hidden selection:bg-primary-container selection:text-white">
+  <div class="scanline pointer-events-none"></div>
+  <div class="flex h-screen w-full">
+    <!-- Side Navigation Shell -->
+    <aside class="h-screen w-64 border-r-2 border-outline bg-surface-container-low flex flex-col p-stack-md gap-stack-md shrink-0">
+      <div class="mb-stack-lg">
+        <div class="font-headline-md text-headline-md text-primary leading-tight">HOME_PORTAL //</div>
+        <div class="font-label-caps text-label-caps text-outline">SYS_GATEWAY_V1.1</div>
+      </div>
+      
+      <!-- Connection Mode switcher embedded in sidebar as Brutalist elements -->
+      <div class="flex flex-col gap-2 mb-4">
+        <div class="font-label-caps text-label-caps text-outline mb-1">ROUTING MODE</div>
+        <button id="btnLocal" onclick="setConnectionMode('local')" class="w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-black flex items-center gap-2 hover-press transition-all bg-primary text-on-primary brutalist-shadow-orange">
+          <span class="material-symbols-outlined text-[18px]">wifi</span> LOCAL_SUBNET
+        </button>
+        <button id="btnRemote" onclick="setConnectionMode('remote')" class="w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-black flex items-center gap-2 hover-press transition-all bg-transparent text-on-surface-variant hover:border-outline">
+          <span class="material-symbols-outlined text-[18px]">dns</span> REMOTE_PROXY
+        </button>
+      </div>
+
+      <!-- Tag Filters / Quick Nav -->
+      <nav class="flex flex-col gap-unit flex-grow">
+        <div class="font-label-caps text-label-caps text-outline mb-1">FILTER SERVICES</div>
+        <button onclick="filterServicesByTag('all')" id="navAll" class="flex items-center gap-stack-sm p-stack-sm text-left font-label-caps text-label-caps border-2 border-primary bg-primary/10 text-primary transition-all">
+          <span class="material-symbols-outlined text-[16px]">grid_view</span> ALL_SERVICES
+        </button>
+        <button onclick="filterServicesByTag('media')" id="navMedia" class="flex items-center gap-stack-sm p-stack-sm text-left font-label-caps text-label-caps border-2 border-transparent text-on-surface-variant hover:border-outline transition-all">
+          <span class="material-symbols-outlined text-[16px]">movie</span> MEDIA_PLAYERS
+        </button>
+        <button onclick="filterServicesByTag('smart')" id="navSmart" class="flex items-center gap-stack-sm p-stack-sm text-left font-label-caps text-label-caps border-2 border-transparent text-on-surface-variant hover:border-outline transition-all">
+          <span class="material-symbols-outlined text-[16px]">home</span> HOME_AUTO
+        </button>
+        <button onclick="filterServicesByTag('storage')" id="navStorage" class="flex items-center gap-stack-sm p-stack-sm text-left font-label-caps text-label-caps border-2 border-transparent text-on-surface-variant hover:border-outline transition-all">
+          <span class="material-symbols-outlined text-[16px]">database</span> STORAGE
+        </button>
+      </nav>
+      
+      <!-- Deploy / Open Settings in Sidebar Footer -->
+      <div class="mt-auto flex flex-col gap-2">
+        <button onclick="openSettings()" class="w-full bg-surface-container-high text-on-surface border-2 border-black font-label-caps text-label-caps p-stack-sm brutalist-shadow-black active:translate-y-0.5 active:translate-x-0.5 transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[16px]">settings</span> CONFIG_REVERSE_PROXY
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col overflow-hidden">
+      <!-- Top App Bar -->
+      <header class="flex justify-between items-center w-full px-margin-desktop py-stack-sm bg-background border-b-2 border-outline shadow-[4px_4px_0px_0px_rgba(45,91,255,1)] z-30 shrink-0">
+        <div class="font-headline-md text-headline-md text-primary tracking-tighter uppercase">PORTAL_COMMAND // KROOSWIJKHOF</div>
+        <div class="flex items-center gap-stack-lg">
+          <!-- Connection Status Badge -->
+          <div id="connectionStatus" class="flex items-center gap-stack-sm border-2 border-outline px-stack-sm py-unit bg-surface-container-low">
+            <span class="w-2.5 h-2.5 bg-primary animate-pulse"></span>
+            <span id="statusText" class="font-label-mono text-label-mono text-primary uppercase">LOCAL INTERFACE</span>
+          </div>
+          <!-- Global Search Input -->
+          <div class="flex items-center gap-stack-sm border-2 border-outline px-stack-sm py-unit bg-surface-container-low focus-within:border-primary transition-all">
+            <span class="material-symbols-outlined text-outline text-[18px]">search</span>
+            <input id="serviceSearch" class="bg-transparent border-none focus:ring-0 font-label-mono text-label-mono text-on-surface w-48 p-0" placeholder="QUERY_SYSTEM..." type="text" autocomplete="off"/>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Grid -->
+      <div class="p-margin-desktop overflow-y-auto flex-grow bg-surface-dim space-y-stack-lg">
+        
+        <!-- Top Section: Dynamic Services (rendered inside custom categories or grid) -->
+        <div>
+          <div class="font-label-caps text-label-caps text-primary mb-3">SYSTEM_SERVICES_DIRECTORY</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="servicesGrid">
+            <!-- Dynamic Links will be rendered here -->
+          </div>
+        </div>
+
+        <!-- Middle Row: Environment (Dynamic states) & Performance (Simulated metrics) -->
+        <div class="grid grid-cols-12 gap-gutter">
+          <!-- Left Panel: Smart Home Environment & Controls -->
+          <div class="col-span-8 bg-surface-container border-2 border-outline p-stack-lg brutalist-shadow-orange relative overflow-hidden">
+            <div class="flex justify-between items-start mb-6 border-b border-outline pb-4">
+              <div>
+                <div class="font-label-caps text-label-caps text-secondary-container mb-unit">SMART HOME GATEWAY</div>
+                <div class="font-headline-lg text-headline-lg text-on-surface leading-tight">ENVIRONMENT STASIS</div>
+              </div>
+              <div class="text-right flex flex-col items-end">
+                <div class="font-headline-md text-headline-md text-secondary-container" id="envTemp">--°C</div>
+                <div class="font-label-mono text-label-mono text-outline" id="envHum">HUMIDITY: --%</div>
+              </div>
+            </div>
+
+            <!-- Home Sensors & Presence Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="sensorsGrid">
+              <!-- Sensors loaded dynamically from javascript -->
+            </div>
+
+            <!-- Dynamic Switches and Lights Section -->
+            <div class="font-label-caps text-label-caps text-secondary-container mb-2">LIGHTS & SWITCHES</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="lightsGrid">
+              <!-- Lights loaded dynamically from javascript -->
+            </div>
+          </div>
+
+          <!-- Right Panel: Infrastructure Performance stats -->
+          <div class="col-span-4 flex flex-col gap-gutter">
+            <!-- CPU Load widget -->
+            <div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex-grow flex flex-col">
+              <div class="font-label-caps text-label-caps text-primary mb-stack-sm flex justify-between">
+                <span>CPU LOAD</span>
+                <span id="cpuText" class="font-bold">24%</span>
+              </div>
+              <div class="flex-grow flex items-center justify-center py-stack-sm relative">
+                <!-- SVG CPU gauge -->
+                <div class="w-24 h-24 border-4 border-surface-container-highest rounded-full flex items-center justify-center relative">
+                  <svg class="absolute inset-0 w-full h-full -rotate-90">
+                    <circle id="cpuCircle" class="text-primary" cx="44" cy="44" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251" stroke-dashoffset="190" stroke-width="6" style="transform: translate(4px, 4px)"></circle>
+                  </svg>
+                  <span id="cpuGaugeVal" class="font-headline-md text-headline-md text-primary">24%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resource Buffer bars -->
+            <div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex-grow">
+              <div class="font-label-caps text-label-caps text-primary mb-stack-sm">RESOURCE BUFFERS</div>
+              <div class="flex flex-col gap-unit">
+                <div class="flex justify-between font-label-mono text-label-mono text-outline">
+                  <span>RAM_USAGE</span>
+                  <span>20.5GB / 32GB (64%)</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-highest border border-outline">
+                  <div class="h-full bg-tertiary" style="width: 64%"></div>
+                </div>
+                <div class="flex justify-between font-label-mono text-label-mono text-outline mt-unit">
+                  <span>ARRAY_STORAGE</span>
+                  <span>52.0TB / 80TB (65%)</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-highest border border-outline">
+                  <div class="h-full bg-secondary-container" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Terminal Logs & Alerts -->
+        <div class="grid grid-cols-12 gap-gutter">
+          <!-- Terminal System Console -->
+          <div class="col-span-7 bg-black border-2 border-outline-variant p-stack-md font-label-mono text-label-mono text-primary h-64 overflow-hidden relative">
+            <div class="absolute top-stack-sm right-stack-sm flex gap-unit">
+              <div class="w-3 h-3 bg-red-600"></div>
+              <div class="w-3 h-3 bg-yellow-600"></div>
+              <div class="w-3 h-3 bg-green-600"></div>
+            </div>
+            <div class="flex flex-col gap-1 overflow-y-auto h-full pr-stack-sm terminal-text" id="terminal-content">
+              <!-- Logs populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Pending Updates & Alerts -->
+          <div class="col-span-5 bg-surface-container border-2 border-outline p-stack-md h-64 flex flex-col">
+            <div class="font-label-caps text-label-caps text-primary mb-stack-sm border-b-2 border-outline pb-unit flex justify-between">
+              <span>SYSTEM ALERTS & UPDATES</span>
+              <span id="alertsCount">0 ACTIVE</span>
+            </div>
+            <div id="alertsContainer" class="overflow-y-auto flex-grow pr-unit space-y-2">
+              <!-- Updates & Alerts loaded dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bar -->
+      <footer class="flex justify-between items-center px-gutter py-unit w-full bg-surface-container-lowest border-t-2 border-outline z-40 shrink-0">
+        <div class="font-label-mono text-label-mono text-outline">SYSTEM_LOG_TERMINAL_V2.5_READY</div>
+        <div class="flex gap-stack-lg">
+          <button onclick="clearTerminal()" class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer bg-transparent border-none">CLEAR_BUFFER</button>
+          <button onclick="simulateLogLine('PORTAL_DIAG: MANUAL_SCAN_TRIGGERED')" class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer bg-transparent border-none">RUN_DIAGNOSTIC</button>
+        </div>
+        <div id="phBlockStatus" class="font-label-caps text-label-caps text-secondary-container">PI-HOLE: ACTIVE (20.65% BLOCKED)</div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Settings Modal (Brutalist style) -->
+  <div id="settingsModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="bg-surface border-b-2 border-black p-4 flex justify-between items-center">
+        <h3 class="font-headline-md text-headline-md text-primary">REVERSE PROXY SETUP</h3>
+        <button class="font-bold text-lg text-outline hover:text-primary" onclick="closeSettings()">&times;</button>
+      </div>
+      <div class="p-6 overflow-y-auto flex-grow space-y-4">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-caps text-label-caps text-outline" for="duckDnsDomain">DuckDNS Domain Name</label>
+          <input class="bg-black border-2 border-outline p-2 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="duckDnsDomain" placeholder="e.g. yourname.duckdns.org" autocomplete="off">
+          <p class="text-xs text-outline-variant leading-relaxed">Enter your base DuckDNS subdomain domain. Make sure your reverse proxy is mapping each service's subdomain prefix below to its local host.</p>
+        </div>
+        
+        <h4 class="font-label-caps text-label-caps text-primary border-b border-outline pb-1">Subdomain Prefixes</h4>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixHA">Home Assistant</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixHA" placeholder="(none)">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixFluidd">Fluidd (3D Printer)</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixFluidd" placeholder="fluidd">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixSonarr">Sonarr</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixSonarr" placeholder="sonarr">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixRadarr">Radarr</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixRadarr" placeholder="radarr">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixUnraid">Unraid</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixUnraid" placeholder="unraid">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixDeluge">Deluge</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixDeluge" placeholder="deluge">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixSeerr">Seerr</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixSeerr" placeholder="seerr">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixPlex">Plex</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixPlex" placeholder="plex">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixPihole">Pi-hole</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixPihole" placeholder="pihole">
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-mono text-xs text-outline" for="prefixNPM">Nginx Proxy Manager</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixNPM" placeholder="npm">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixProwlarr">Prowlarr</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixProwlarr" placeholder="prowlarr">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="haTokenInput">Home Assistant Access Token</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="password" id="haTokenInput" placeholder="Long-Lived Access Token">
+          </div>
+        </div>
+      </div>
+      <div class="bg-surface border-t-2 border-black p-4 flex justify-end gap-2">
+        <button class="bg-transparent text-outline hover:text-on-surface font-label-caps text-label-caps px-4 py-2 border border-outline hover:border-on-surface active:translate-y-0.5" onclick="closeSettings()">Cancel</button>
+        <button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 border-2 border-black brutalist-shadow-orange active:translate-y-0.5" onclick="saveSettings()">Save & Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Embedded HA States database mapping directly from ha_states.json file
+    const defaultHaStates = [
+      {"entity_id":"update.home_assistant_operating_system_update","state":"on","attributes":{"installed_version":"18.0","latest_version":"18.1","friendly_name":"Home Assistant Operating System Update"}},
+      {"entity_id":"light.living_room_light","state":"off","attributes":{"friendly_name":"Living Room Light"}},
+      {"entity_id":"light.kitchen_light","state":"off","attributes":{"friendly_name":"Kitchen Spotlights"}},
+      {"entity_id":"switch.office_desk_charger","state":"on","attributes":{"friendly_name":"Office Desk Charger"}},
+      {"entity_id":"switch.3d_printer_plug","state":"off","attributes":{"friendly_name":"Creality 3D Printer Plug"}},
+      {"entity_id":"person.alessandro","state":"home","attributes":{"friendly_name":"Alessandro"}},
+      {"entity_id":"sensor.living_room_motion_sensor_temperature","state":"19.4","attributes":{"unit_of_measurement":"°C","friendly_name":"Living Room Temperature"}},
+      {"entity_id":"sensor.pixel_10_battery_level","state":"78","attributes":{"unit_of_measurement":"%","friendly_name":"Pixel 10 Battery Level"}},
+      {"entity_id":"sensor.pixel_10_battery_state","state":"discharging","attributes":{"friendly_name":"Pixel 10 Battery State"}},
+      {"entity_id":"sensor.pixel_10_daily_steps","state":"4812","attributes":{"unit_of_measurement":"steps","friendly_name":"Daily Steps"}},
+      {"entity_id":"sensor.pixel_10_sleep_hours","state":"7.4","attributes":{"unit_of_measurement":"h","friendly_name":"Sleep Duration"}},
+      {"entity_id":"media_player.sony_bravia_tv","state":"idle","attributes":{"friendly_name":"Bravia living room TV","volume_level":0.35}},
+      {"entity_id":"media_player.spotify_alessandro","state":"playing","attributes":{"friendly_name":"Spotify Connect","volume_level":0.5,"media_title":"After Hours - The Weeknd"}}
+    ];
+
+    // Initialize application state
+    let connectionMode = localStorage.getItem('portal_connection_mode') || 'local';
+    let activeTagFilter = 'all';
+
+    let domainSettings = JSON.parse(localStorage.getItem('portal_domain_settings')) || {
+      domain: 'homeassistantkrooswijkhof.duckdns.org',
+      haToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5MTdiOTFkMTAzZTE0NmQ1YWIyZTg3YjFlMzkyNjUzYyIsImlhdCI6MTc4MzE5OTMxNCwiZXhwIjoyMDk4NTU5MzE0fQ.oTQKsTCZf-IwYJyEwCzLcxx8ch7StRmvv3QzBkDHs4Q',
+      prefixes: {
+        ha: '',
+        fluidd: 'fluidd',
+        sonarr: 'sonarr',
+        radarr: 'radarr',
+        unraid: 'unraid',
+        pihole: 'pihole',
+        deluge: 'deluge',
+        seerr: 'seerr',
+        plex: 'plex',
+        npm: 'npm',
+        prowlarr: 'prowlarr'
+      }
+    };
+
+    if (domainSettings && !domainSettings.haToken) {
+      domainSettings.haToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5MTdiOTFkMTAzZTE0NmQ1YWIyZTg3YjFlMzkyNjUzYyIsImlhdCI6MTc4MzE5OTMxNCwiZXhwIjoyMDk4NTU5MzE0fQ.oTQKsTCZf-IwYJyEwCzLcxx8ch7StRmvv3QzBkDHs4Q';
+    }
+
+    // In-memory smart home states
+    let haStates = [];
+
+    // Services definition mapping prefixes and local ports
+    const services = [
+      { id: 'ha', name: 'Home Assistant', desc: 'Home automation dashboard & supervisor', localUrl: 'http://192.168.1.41:8123', icon: 'ha-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>', tags: 'ha smart automation lighting' },
+      { id: 'fluidd', name: 'Fluidd', desc: 'Klipper 3D printer web interface', localUrl: 'http://fluiddpi.local', icon: 'fluidd-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>', tags: '3d printer klipper mainsail octoprint' },
+      { id: 'sonarr', name: 'Sonarr', desc: 'TV series manager and calendar tracker', localUrl: 'http://tower.local:8989', icon: 'sonarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'sonarr media tv shows download torrent' },
+      { id: 'radarr', name: 'Radarr', desc: 'Movies indexer and library status', localUrl: 'http://tower.local:7878', icon: 'radarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>', tags: 'radarr media movie downloads indexer' },
+      { id: 'prowlarr', name: 'Prowlarr', desc: 'Torrent and Usenet indexer manager', localUrl: 'http://tower.local:9696', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>', tags: 'prowlarr indexer search torrent usenet media downloads' },
+      { id: 'unraid', name: 'Unraid NAS', desc: 'Home storage server & Docker dashboard', localUrl: 'http://tower.local', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>', tags: 'unraid storage dockers servers' },
+      { id: 'deluge', name: 'Deluge', desc: 'BitTorrent downloader client WebUI', localUrl: 'http://tower.local:8112', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>', tags: 'deluge torrent client download p2p storage' },
+      { id: 'seerr', name: 'Seerr', desc: 'Media requests & discovery platform', localUrl: 'http://tower.local:5055', icon: 'seerr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>', tags: 'seerr request overseerr jellyseerr media download discovery' },
+      { id: 'plex', name: 'Plex', desc: 'Media server & streaming client WebUI', localUrl: 'http://tower.local:32400/web/index.html#!/', icon: 'plex-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><polygon points="12 8 16 12 12 16 12 8"/></svg>', tags: 'plex media server movie streaming play' },
+      { id: 'npm', name: 'Nginx Proxy Manager', desc: 'Reverse proxy management dashboard', localUrl: 'http://tower.local:8181', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M12 8v8M5 16v-5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/></svg>', tags: 'npm proxy nginx reverse redirect network router' },
+      { id: 'pihole', name: 'Pi-hole DNS', desc: 'Ad-blocking and network request filters', localUrl: 'http://pihole.local/admin', icon: 'pihole-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', tags: 'pihole dns adblock filters admin smart' }
+    ];
+
+    // Initialize application
+    async function init() {
+      // Setup Terminal Logs
+      simulateLogLine("SYSTEM_PORTAL: INITIALIZING BOOT SEQUENCE V2.5...");
+      simulateLogLine("ROUTING: BINDING TO WAN PROTOCOLS...");
+      
+      // Load states from real HA API or fallback
+      const haToken = domainSettings.haToken;
+      if (haToken) {
+        try {
+          const response = await fetch('https://homeassistantkrooswijkhof.duckdns.org/api/states', {
+            headers: {
+              'Authorization': `Bearer ${haToken}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          if (response.ok) {
+            haStates = await response.json();
+            simulateLogLine("HA_API: LIVE STATE SYNCHRONIZATION SUCCESSFUL");
+          } else {
+            throw new Error();
+          }
+        } catch (err) {
+          console.warn("Failed to fetch live HA states, falling back:", err);
+          simulateLogLine("HA_API: SYNC FAILED - RUNNING IN OFFLINE SIMULATION");
+          await loadMockStates();
+        }
+      } else {
+        await loadMockStates();
+      }
+
+      async function loadMockStates() {
+        try {
+          const response = await fetch('ha_states.json');
+          if (response.ok) {
+            haStates = await response.json();
+            simulateLogLine("DATABASE: SUCCESS LOADED ha_states.json");
+          } else {
+            const localData = localStorage.getItem('portal_ha_states');
+            if (localData) {
+              haStates = JSON.parse(localData);
+              simulateLogLine("DATABASE: LOADED FALLBACK FROM LOCAL_STORAGE");
+            } else {
+              haStates = [...defaultHaStates];
+              simulateLogLine("DATABASE: WARNING - NO LOCAL JSON, LOADED TEMPLATE");
+            }
+          }
+        } catch (err) {
+          haStates = [...defaultHaStates];
+          simulateLogLine("DATABASE: CONNECTION ERROR - LOADED TEMPLATE");
+        }
+      }
+
+      // Sync settings and render interface
+      updateConnectionSwitcherUI();
+      renderServices();
+      renderUpdates();
+      renderSensors();
+      renderLights();
+      startSimulators();
+      
+      // Print network verification logs
+      simulateLogLine("NETWORK: CHECKING ACTIVE SUBNET ROUTING...");
+      simulateLogLine("NET_OK: http://tower.local RESOLVED TO UNRAID");
+      simulateLogLine("NET_OK: http://192.168.1.41:8123 HOME_ASSISTANT RESPONSE 200");
+    }
+
+    // Generate calculated link url depending on routing mode
+    function getServiceUrl(service) {
+      if (connectionMode === 'local') {
+        return service.localUrl;
+      } else {
+        const prefix = domainSettings.prefixes[service.id];
+        if (prefix === '') {
+          return `https://${domainSettings.domain}`;
+        }
+        const finalPrefix = prefix || service.id;
+        return `https://${finalPrefix}.${domainSettings.domain}`;
+      }
+    }
+
+    // Query Moonraker API on the printer to get real-time stats
+    async function fetchFluiddPrinterStatus(baseUrl) {
+      const cleanUrl = baseUrl.replace(/\/$/, '');
+      const url = `${cleanUrl}/printer/objects/query?print_stats&extruder&heater_bed`;
+      
+      try {
+        const response = await fetch(url);
+        if (!response.ok) return;
+        const data = await response.json();
+        if (data && data.result && data.result.status) {
+          const status = data.result.status;
+          const state = status.print_stats.state || 'standby';
+          const nozzleTemp = Math.round(status.extruder.temperature) || 0;
+          const bedTemp = Math.round(status.heater_bed.temperature) || 0;
+          
+          updateFluiddCardUI(state, nozzleTemp, bedTemp);
+        }
+      } catch (e) {
+        console.warn("Failed to fetch Fluidd/Moonraker printer status:", e);
+      }
+    }
+
+    // Update Fluidd card stats sub-display
+    function updateFluiddCardUI(state, nozzleTemp, bedTemp) {
+      const container = document.getElementById('fluidd-stats');
+      if (!container) return;
+      
+      let stateLabel = state.toUpperCase();
+      if (state === 'printing') {
+        stateLabel = 'PRINTING 🛠️';
+      } else if (state === 'paused') {
+        stateLabel = 'PAUSED ⏸️';
+      } else if (state === 'standby') {
+        stateLabel = 'READY';
+      }
+      
+      container.innerHTML = `
+        <span>${stateLabel}</span>
+        <span>NOZZLE: ${nozzleTemp}°C</span>
+        <span>BED: ${bedTemp}°C</span>
+      `;
+      container.classList.remove('hidden');
+    }
+
+    // Perform real-time status check ping for a service
+    async function performStatusCheck(serviceId, url) {
+      const card = document.getElementById(`service-card-${serviceId}`);
+      if (!card) return;
+      
+      const separator = url.includes('?') ? '&' : '?';
+      const checkUrl = `${url}${separator}_t=${Date.now()}`;
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      
+      try {
+        await fetch(checkUrl, {
+          method: 'GET',
+          mode: 'no-cors',
+          signal: controller.signal,
+          credentials: 'omit'
+        });
+        clearTimeout(timeoutId);
+        card.classList.remove('brutalist-shadow-red');
+        card.classList.add('brutalist-shadow-blue');
+        if (serviceId === 'fluidd') {
+          fetchFluiddPrinterStatus(url);
+        }
+        if (serviceId === 'unraid') {
+          const container = document.getElementById('unraid-stats');
+          if (container) container.classList.remove('hidden');
+        }
+      } catch (e) {
+        clearTimeout(timeoutId);
+        card.classList.remove('brutalist-shadow-blue');
+        card.classList.add('brutalist-shadow-red');
+        if (serviceId === 'fluidd') {
+          const container = document.getElementById('fluidd-stats');
+          if (container) container.classList.add('hidden');
+        }
+        if (serviceId === 'unraid') {
+          const container = document.getElementById('unraid-stats');
+          if (container) container.classList.add('hidden');
+        }
+      }
+    }
+
+    // Render service list grid
+    function renderServices(searchQuery = '') {
+      const grid = document.getElementById('servicesGrid');
+      grid.innerHTML = '';
+      
+      let filtered = services;
+      
+      // Apply active tag filter
+      if (activeTagFilter !== 'all') {
+        filtered = filtered.filter(s => s.tags.includes(activeTagFilter));
+      }
+
+      // Apply search query filter
+      if (searchQuery !== '') {
+        filtered = filtered.filter(s => 
+          s.name.toLowerCase().includes(searchQuery) ||
+          s.desc.toLowerCase().includes(searchQuery) ||
+          s.tags.toLowerCase().includes(searchQuery)
+        );
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full border-2 border-outline p-6 bg-surface-container font-label-mono text-outline text-center">NO_MATCHING_SERVICES_FOUND</div>`;
+        return;
+      }
+
+      filtered.forEach(s => {
+        const url = getServiceUrl(s);
+        const card = document.createElement('a');
+        card.id = 'service-card-' + s.id;
+        card.href = url;
+        card.target = '_blank';
+        card.className = 'bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit hover-press';
+        card.setAttribute('data-name', s.tags);
+        
+        // Show status subtext / config info
+        const displayUrl = connectionMode === 'local' ? s.localUrl.replace('http://', '') : `${s.id}.${domainSettings.domain}`;
+
+        let statsContainer = '';
+        if (s.id === 'ha') {
+          const count = haStates.filter(item => isPhysicalLightOrSwitch(item) && item.state === 'on').length;
+          statsContainer = `
+            <div id="ha-stats" class="mt-2 pt-2 border-t border-dashed border-outline-variant font-label-mono text-[10px] text-tertiary flex justify-between items-center w-full">
+              <span>ACTIVE LIGHTS</span>
+              <span>${count} ON</span>
+            </div>
+          `;
+        } else if (s.id === 'fluidd') {
+          statsContainer = `
+            <div id="fluidd-stats" class="hidden mt-2 pt-2 border-t border-dashed border-outline-variant font-label-mono text-[10px] text-tertiary flex justify-between items-center w-full"></div>
+          `;
+        } else if (s.id === 'unraid') {
+          const cpuEntity = haStates.find(item => item.entity_id === 'sensor.unraid_cpu_usage');
+          const ramEntity = haStates.find(item => item.entity_id === 'sensor.unraid_ram_usage');
+          
+          if (cpuEntity && ramEntity) {
+            statsContainer = `
+              <div id="unraid-stats" class="mt-2 pt-2 border-t border-dashed border-outline-variant font-label-mono text-[10px] text-tertiary flex justify-between items-center w-full">
+                <span>CPU: ${cpuEntity.state}%</span>
+                <span>RAM: ${ramEntity.state}%</span>
+              </div>
+            `;
+          }
+        }
+
+        card.innerHTML = `
+          <div class="flex justify-between items-start mb-1">
+            <span class="font-label-caps text-label-caps text-primary tracking-tight truncate max-w-[150px]">${s.name}</span>
+            <span class="text-primary flex items-center justify-center">${s.svg}</span>
+          </div>
+          <div class="font-body-md text-sm text-on-surface-variant line-clamp-2 min-h-[40px] leading-snug">${s.desc}</div>
+          ${statsContainer}
+          <div class="font-label-mono text-[10px] text-outline mt-auto border-t border-outline-variant pt-2 flex justify-between items-center">
+            <span class="truncate max-w-[160px]">${displayUrl}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+        performStatusCheck(s.id, url);
+      });
+    }
+
+    // Filter services by tag
+    function filterServicesByTag(tag) {
+      activeTagFilter = tag;
+      
+      // Update nav states in sidebar
+      ['navAll', 'navMedia', 'navSmart', 'navStorage'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.classList.remove('bg-primary/10', 'text-primary', 'border-primary');
+          btn.classList.add('border-transparent', 'text-on-surface-variant');
+        }
+      });
+
+      const activeBtnId = 'nav' + tag.charAt(0).toUpperCase() + tag.slice(1);
+      const activeBtn = document.getElementById(activeBtnId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-on-surface-variant');
+        activeBtn.classList.add('bg-primary/10', 'text-primary', 'border-primary');
+      }
+
+      simulateLogLine(`FILTER: FILTERED SERVICES BY TAG [${tag.toUpperCase()}]`);
+      renderServices(document.getElementById('serviceSearch').value.toLowerCase().trim());
+    }
+
+    // Update Connection Mode Toggle UI
+    function setConnectionMode(mode) {
+      connectionMode = mode;
+      localStorage.setItem('portal_connection_mode', mode);
+      
+      simulateLogLine(`ROUTING: SWITCHED GATEWAY PROTOCOL TO [${mode.toUpperCase()}]`);
+      
+      updateConnectionSwitcherUI();
+      renderServices(document.getElementById('serviceSearch').value.toLowerCase().trim());
+    }
+
+    function updateConnectionSwitcherUI() {
+      const btnLocal = document.getElementById('btnLocal');
+      const btnRemote = document.getElementById('btnRemote');
+      const statusText = document.getElementById('statusText');
+      const statusBadge = document.getElementById('connectionStatus');
+
+      if (connectionMode === 'local') {
+        btnLocal.className = "w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-black flex items-center gap-2 hover-press transition-all bg-primary text-on-primary brutalist-shadow-orange";
+        btnRemote.className = "w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-transparent text-on-surface-variant hover:border-outline hover:bg-surface-container-high transition-all";
+        
+        if (statusText) statusText.textContent = "LOCAL INTERFACE";
+        if (statusBadge) {
+          statusBadge.className = "flex items-center gap-stack-sm border-2 border-outline px-stack-sm py-unit bg-surface-container-low text-primary";
+          statusBadge.querySelector('span').className = "w-2.5 h-2.5 bg-primary animate-pulse";
+        }
+      } else {
+        btnLocal.className = "w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-transparent text-on-surface-variant hover:border-outline hover:bg-surface-container-high transition-all";
+        btnRemote.className = "w-full text-left p-stack-sm font-label-caps text-label-caps border-2 border-black flex items-center gap-2 hover-press transition-all bg-primary text-on-primary brutalist-shadow-orange";
+        
+        if (statusText) statusText.textContent = "REMOTE PROXY";
+        if (statusBadge) {
+          statusBadge.className = "flex items-center gap-stack-sm border-2 border-outline px-stack-sm py-unit bg-surface-container-low text-secondary-container";
+          statusBadge.querySelector('span').className = "w-2.5 h-2.5 bg-secondary-container animate-pulse";
+        }
+      }
+    }
+
+    // Settings Modal Handlers
+    function openSettings() {
+      simulateLogLine("SYSTEM: OPENED REVERSE PROXY CONFIGURATION");
+      document.getElementById('duckDnsDomain').value = domainSettings.domain;
+      document.getElementById('prefixHA').value = domainSettings.prefixes.ha !== undefined ? domainSettings.prefixes.ha : '';
+      document.getElementById('prefixFluidd').value = domainSettings.prefixes.fluidd !== undefined ? domainSettings.prefixes.fluidd : 'fluidd';
+      document.getElementById('prefixSonarr').value = domainSettings.prefixes.sonarr !== undefined ? domainSettings.prefixes.sonarr : 'sonarr';
+      document.getElementById('prefixRadarr').value = domainSettings.prefixes.radarr !== undefined ? domainSettings.prefixes.radarr : 'radarr';
+      document.getElementById('prefixUnraid').value = domainSettings.prefixes.unraid !== undefined ? domainSettings.prefixes.unraid : 'unraid';
+      document.getElementById('prefixPihole').value = domainSettings.prefixes.pihole !== undefined ? domainSettings.prefixes.pihole : 'pihole';
+      document.getElementById('prefixDeluge').value = domainSettings.prefixes.deluge !== undefined ? domainSettings.prefixes.deluge : 'deluge';
+      document.getElementById('prefixSeerr').value = domainSettings.prefixes.seerr !== undefined ? domainSettings.prefixes.seerr : 'seerr';
+      document.getElementById('prefixPlex').value = domainSettings.prefixes.plex !== undefined ? domainSettings.prefixes.plex : 'plex';
+      document.getElementById('prefixNPM').value = domainSettings.prefixes.npm !== undefined ? domainSettings.prefixes.npm : 'npm';
+      document.getElementById('prefixProwlarr').value = domainSettings.prefixes.prowlarr !== undefined ? domainSettings.prefixes.prowlarr : 'prowlarr';
+      document.getElementById('haTokenInput').value = domainSettings.haToken !== undefined ? domainSettings.haToken : '';
+      
+      document.getElementById('settingsModal').classList.add('active');
+    }
+
+    function closeSettings() {
+      document.getElementById('settingsModal').classList.remove('active');
+    }
+
+    function saveSettings() {
+      const domainVal = document.getElementById('duckDnsDomain').value.trim() || 'yourname.duckdns.org';
+      
+      domainSettings = {
+        domain: domainVal,
+        haToken: document.getElementById('haTokenInput').value.trim(),
+        prefixes: {
+          ha: document.getElementById('prefixHA').value.trim(),
+          fluidd: document.getElementById('prefixFluidd').value.trim(),
+          sonarr: document.getElementById('prefixSonarr').value.trim(),
+          radarr: document.getElementById('prefixRadarr').value.trim(),
+          unraid: document.getElementById('prefixUnraid').value.trim(),
+          pihole: document.getElementById('prefixPihole').value.trim(),
+          deluge: document.getElementById('prefixDeluge').value.trim(),
+          seerr: document.getElementById('prefixSeerr').value.trim(),
+          plex: document.getElementById('prefixPlex').value.trim(),
+          npm: document.getElementById('prefixNPM').value.trim(),
+          prowlarr: document.getElementById('prefixProwlarr').value.trim()
+        }
+      };
+
+      localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
+      closeSettings();
+      simulateLogLine(`DOMAIN: UPDATED ROOT DOMAIN TO [${domainVal}]`);
+      updateConnectionSwitcherUI();
+      renderServices();
+    }
+
+    // Save current states configuration
+    function saveHaStates() {
+      localStorage.setItem('portal_ha_states', JSON.stringify(haStates));
+    }
+
+    // Smart Home: Updates section
+    function renderUpdates() {
+      const list = document.getElementById('alertsContainer');
+      const alertsCount = document.getElementById('alertsCount');
+      list.innerHTML = '';
+      
+      const updateEntities = haStates.filter(s => s.entity_id.startsWith('update.'));
+      const activeUpdates = updateEntities.filter(s => s.state === 'on');
+
+      if (activeUpdates.length === 0) {
+        alertsCount.textContent = "0 ALERTS";
+        list.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center border-2 border-dashed border-outline-variant p-4 font-label-mono text-outline text-xs">
+            <span class="material-symbols-outlined text-lg mb-1">done_all</span> NO_ACTIVE_ALERTS
+          </div>
+        `;
+        return;
+      }
+
+      alertsCount.textContent = `${activeUpdates.length} ACTIVE`;
+      
+      activeUpdates.forEach(u => {
+        const title = u.attributes.friendly_name || 'System Update';
+        const latest = u.attributes.latest_version || 'N/A';
+        
+        const card = document.createElement('div');
+        card.className = 'border-2 border-black bg-secondary-container/10 p-stack-sm flex justify-between items-center hover:bg-secondary-container/20 transition-all';
+        card.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary-container animate-pulse">info</span>
+            <div class="flex flex-col">
+              <span class="font-label-mono text-xs font-bold truncate max-w-[180px]">${title}</span>
+              <span class="font-label-mono text-[10px] text-outline">v${latest} AVAILABLE</span>
+            </div>
+          </div>
+          <button class="bg-secondary-container text-black border border-black font-label-caps text-[10px] px-2 py-1 hover:bg-orange-500 hover-press transition-all" onclick="triggerUpdate('${u.entity_id}')">Install</button>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function triggerUpdate(entityId) {
+      const entity = haStates.find(s => s.entity_id === entityId);
+      if (entity) {
+        entity.state = 'off';
+        entity.attributes.installed_version = entity.attributes.latest_version;
+        saveHaStates();
+        renderUpdates();
+        simulateLogLine(`SYS_UPDATE: COMPLETED INSTALL FOR [${entity.attributes.friendly_name}]`);
+      }
+    }
+
+    // Helper to determine if a switch/light entity is a physical light or light switch
+    function isPhysicalLightOrSwitch(entity) {
+      const id = entity.entity_id;
+      if (!id.startsWith('light.') && !id.startsWith('switch.')) return false;
+      
+      const blacklist = ['camera', 'motion_sensor', 'light_sensor', 'dreame', 'nefit', 'bridge_automation'];
+      return !blacklist.some(term => id.includes(term));
+    }
+
+    // Smart Home: Lights & Switches Section
+    function renderLights() {
+      const list = document.getElementById('lightsGrid');
+      list.innerHTML = '';
+      
+      const lightEntities = haStates.filter(isPhysicalLightOrSwitch);
+      
+      lightEntities.forEach(l => {
+        const isOn = l.state === 'on';
+        const card = document.createElement('button');
+        card.className = `p-3 border-2 flex items-center justify-between transition-all hover-press text-left ${isOn ? 'bg-secondary-container text-black border-black brutalist-shadow-black' : 'bg-surface-container-low text-on-surface-variant border-outline-variant hover:border-outline'}`;
+        card.onclick = () => toggleLight(l.entity_id);
+        
+        card.innerHTML = `
+          <div class="flex items-center gap-2 truncate">
+            <span class="material-symbols-outlined ${isOn ? 'text-black' : 'text-outline'} text-[18px]">power_settings_new</span>
+            <span class="font-label-mono text-xs font-bold truncate max-w-[100px]">${l.attributes.friendly_name || l.entity_id}</span>
+          </div>
+          <span class="font-label-caps text-[10px] px-1.5 py-0.5 border ${isOn ? 'border-black bg-black text-secondary-container' : 'border-outline-variant bg-surface-container text-outline'}">${isOn ? 'ON' : 'OFF'}</span>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Toggle state - live with optimistic UI updates or simulated fallback
+    async function toggleLight(entityId) {
+      const entity = haStates.find(s => s.entity_id === entityId);
+      if (!entity) return;
+      
+      const haToken = domainSettings.haToken;
+      if (haToken) {
+        const domain = entityId.split('.')[0];
+        const url = `https://homeassistantkrooswijkhof.duckdns.org/api/services/${domain}/toggle`;
+        
+        try {
+          // Optimistic UI update
+          entity.state = entity.state === 'on' ? 'off' : 'on';
+          renderLights();
+          updateHaLightCount();
+          
+          simulateLogLine(`STATE_CHANGE: [${entity.attributes.friendly_name || entity.entity_id}] TRANSMITTING TOGGLE TO CORE...`);
+          
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${haToken}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ entity_id: entityId })
+          });
+          
+          if (!res.ok) throw new Error();
+          
+          // Re-fetch states to ensure exact sync
+          const statesRes = await fetch('https://homeassistantkrooswijkhof.duckdns.org/api/states', {
+            headers: {
+              'Authorization': `Bearer ${haToken}`
+            }
+          });
+          if (statesRes.ok) {
+            haStates = await statesRes.json();
+            renderLights();
+            updateHaLightCount();
+          }
+          simulateLogLine(`STATE_CHANGE: [${entity.attributes.friendly_name || entity.entity_id}] TOGGLED SUCCESSFUL`);
+        } catch (e) {
+          console.error("Failed to toggle light on Home Assistant:", e);
+          simulateLogLine(`STATE_CHANGE: [${entity.attributes.friendly_name || entity.entity_id}] TOGGLE FAILED - REVERTING`);
+          // Revert state
+          entity.state = entity.state === 'on' ? 'off' : 'on';
+          renderLights();
+          updateHaLightCount();
+        }
+      } else {
+        // Simulated local toggle fallback
+        entity.state = entity.state === 'on' ? 'off' : 'on';
+        saveHaStates();
+        renderLights();
+        updateHaLightCount();
+        simulateLogLine(`STATE_CHANGE: [${entity.attributes.friendly_name || entity.entity_id}] TOGGLED IN MEMORY`);
+      }
+    }
+
+    // Update Home Assistant active lights count display dynamically
+    function updateHaLightCount() {
+      const container = document.getElementById('ha-stats');
+      if (!container) return;
+      const count = haStates.filter(item => isPhysicalLightOrSwitch(item) && item.state === 'on').length;
+      container.innerHTML = `
+        <span>ACTIVE LIGHTS</span>
+        <span>${count} ON</span>
+      `;
+    }
+
+    // Smart Home: Sensors Section
+    function renderSensors() {
+      const list = document.getElementById('sensorsGrid');
+      list.innerHTML = '';
+      
+      const sensors = [
+        { id: 'person.alessandro', label: 'Alessandro', type: 'presence', svg: 'person' },
+        { id: 'sensor.living_room_motion_sensor_temperature', label: 'Living Room', type: 'value', svg: 'thermostat' },
+        { id: 'sensor.pixel_10_battery_level', label: 'Phone Battery', type: 'battery', svg: 'battery_charging_full' },
+        { id: 'sensor.pixel_10_daily_steps', label: 'Steps Count', type: 'value', svg: 'footprint' }
+      ];
+
+      // Update temperature display in Environment Stasis title
+      const tempEnt = haStates.find(e => e.entity_id === 'sensor.living_room_motion_sensor_temperature');
+      if (tempEnt) {
+        document.getElementById('envTemp').textContent = `${tempEnt.state}°C`;
+      }
+
+      sensors.forEach(s => {
+        const entity = haStates.find(e => e.entity_id === s.id);
+        if (!entity) return;
+
+        let displayValue = entity.state;
+        let suffix = '';
+        if (s.type === 'presence') {
+          displayValue = entity.state === 'home' ? 'At Home' : 'Away';
+        } else if (s.type === 'battery') {
+          const battState = haStates.find(e => e.entity_id === 'sensor.pixel_10_battery_state');
+          displayValue = `${entity.state}%`;
+          suffix = battState ? ` (${battState.state.substring(0,4)})` : '';
+        } else if (entity.attributes.unit_of_measurement) {
+          suffix = ' ' + entity.attributes.unit_of_measurement;
+        }
+
+        const isHome = entity.state === 'home';
+        const card = document.createElement('div');
+        card.className = `border-2 border-outline-variant p-3 flex flex-col justify-between bg-surface-container-low min-h-[90px]`;
+        card.innerHTML = `
+          <div class="flex justify-between items-start mb-1">
+            <span class="font-label-caps text-[10px] text-outline uppercase truncate max-w-[80px]">${s.label}</span>
+            <span class="material-symbols-outlined text-[16px] text-primary">${s.svg}</span>
+          </div>
+          <div class="font-label-mono text-sm font-bold text-on-surface leading-none mt-2 truncate">${displayValue}${suffix}</div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Simulate logs in terminal block
+    function simulateLogLine(message) {
+      const terminal = document.getElementById('terminal-content');
+      if (!terminal) return;
+      const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+      
+      const logLine = document.createElement('div');
+      logLine.className = 'leading-relaxed text-xs';
+      
+      // Apply color highlights depending on tags
+      if (message.includes("SUCCESS") || message.includes("NET_OK")) {
+        logLine.innerHTML = `<span class="opacity-50">[${time}]</span> <span class="text-tertiary">${message}</span>`;
+      } else if (message.includes("WARNING") || message.includes("ALERT")) {
+        logLine.innerHTML = `<span class="opacity-50">[${time}]</span> <span class="text-secondary-container font-bold">${message}</span>`;
+      } else {
+        logLine.innerHTML = `<span class="opacity-50">[${time}]</span> <span class="opacity-90">${message}</span>`;
+      }
+      
+      terminal.appendChild(logLine);
+      if (terminal.children.length > 60) {
+        terminal.removeChild(terminal.firstChild);
+      }
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function clearTerminal() {
+      const terminal = document.getElementById('terminal-content');
+      if (terminal) {
+        terminal.innerHTML = '<div class="opacity-50">[SYSTEM LOG TERMINAL BUFFER CLEARED]</div>';
+      }
+    }
+
+    // Active simulators for dynamic metrics (CPU / Pi-hole / Steps)
+    function startSimulators() {
+      // Real-time Home Assistant State Polling & Gauge Sync
+      setInterval(async () => {
+        const haToken = domainSettings.haToken;
+        if (haToken) {
+          try {
+            const res = await fetch('https://homeassistantkrooswijkhof.duckdns.org/api/states', {
+              headers: { 'Authorization': `Bearer ${haToken}` }
+            });
+            if (res.ok) {
+              const liveStates = await res.json();
+              
+              // Update in-memory states without fully replacing array reference
+              liveStates.forEach(live => {
+                const existing = haStates.find(s => s.entity_id === live.entity_id);
+                if (existing) existing.state = live.state;
+                else haStates.push(live);
+              });
+
+              // 1. Update big CPU Gauge (Unraid CPU)
+              const cpuEntity = haStates.find(item => item.entity_id === 'sensor.unraid_cpu_usage');
+              if (cpuEntity) {
+                const next = parseFloat(cpuEntity.state) || 0;
+                const cpuText = document.getElementById('cpuText');
+                const cpuGaugeVal = document.getElementById('cpuGaugeVal');
+                const cpuCircle = document.getElementById('cpuCircle');
+                if (cpuText && cpuCircle) {
+                  cpuText.textContent = `${next}%`;
+                  if (cpuGaugeVal) cpuGaugeVal.textContent = `${next}%`;
+                  const offset = Math.round(251 - (251 * next / 100));
+                  cpuCircle.setAttribute('stroke-dashoffset', offset);
+                }
+              }
+
+              // 2. Update Unraid service tile dynamically
+              const unraidContainer = document.getElementById('unraid-stats');
+              const ramEntity = haStates.find(item => item.entity_id === 'sensor.unraid_ram_usage');
+              if (unraidContainer && cpuEntity && ramEntity && !unraidContainer.classList.contains('hidden')) {
+                unraidContainer.innerHTML = `
+                  <span>CPU: ${cpuEntity.state}%</span>
+                  <span>RAM: ${ramEntity.state}%</span>
+                `;
+              }
+              
+              // 3. Keep Active Lights Counter perfectly in sync
+              updateHaLightCount();
+              renderLights();
+              
+            }
+          } catch (e) {}
+        }
+      }, 10000);
+
+      // Simulate steps increase
+      setInterval(() => {
+        const entity = haStates.find(s => s.entity_id === 'sensor.pixel_10_daily_steps');
+        if (entity) {
+          const steps = parseFloat(entity.state);
+          entity.state = (steps + Math.floor(Math.random() * 5)).toFixed(0);
+          renderSensors();
+        }
+      }, 9000);
+
+      // Random network log entries
+      const logs = [
+        "RELAY_DAEMON: polling local nodes... nominal",
+        "SYNC_JOB: pushed smart-home state dump",
+        "ROUTER: client table synchronized",
+        "SECURITY: secure key rotation initiated",
+        "INFRA_SWEEP: disk temperatures stable (38°C)",
+        "DOCKER_ENGINE: health check finished - ok"
+      ];
+      setInterval(() => {
+        const rand = logs[Math.floor(Math.random() * logs.length)];
+        simulateLogLine(`DAEMON: ${rand}`);
+      }, 12000);
+    }
+
+    // Services filtering search logic
+    document.getElementById('serviceSearch').addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      renderServices(query);
+    });
+
+    // Clear search on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const searchInput = document.getElementById('serviceSearch');
+        if (document.activeElement === searchInput) {
+          searchInput.value = '';
+          renderServices();
+          searchInput.blur();
+        } else {
+          closeSettings();
+        }
+      }
+    });
+
+    // Load initial resources
+    window.onload = init;
+  </script>
+</body>
+</html>

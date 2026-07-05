@@ -1,0 +1,18 @@
+{
+  "domain": "cardata",
+  "name": "BMW Cardata",
+  "after_dependencies": ["http", "lovelace"],
+  "codeowners": [
+    "@kvanbiesen"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/kvanbiesen/bmw-cardata-ha/",
+  "integration_type": "device",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/kvanbiesen/bmw-cardata-ha/issues",
+  "loggers": ["custom_components.cardata", "paho.mqtt", "paho.mqtt.client"],
+  "requirements": [
+    "paho-mqtt>=1.6.1"
+  ],
+  "version": "5.2.1"
+}

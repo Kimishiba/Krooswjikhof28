@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COMMAND_CENTER_V1.0 | SYSTEM ROOT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@400;700&amp;family=Archivo+Narrow:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#ff5e07",
+                    "tertiary-container": "#007981",
+                    "tertiary": "#00dbe9",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#434656",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "outline": "#8e90a2",
+                    "secondary": "#ffb59a",
+                    "on-primary-fixed": "#001355",
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#802a00",
+                    "secondary-fixed": "#ffdbce",
+                    "surface-bright": "#3a3939",
+                    "surface-container-highest": "#353534",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "on-secondary-fixed": "#370e00",
+                    "primary-fixed": "#dde1ff",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#002387",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-tertiary-fixed": "#002022",
+                    "on-tertiary-container": "#c4faff",
+                    "primary-container": "#2d5bff",
+                    "primary": "#b8c3ff",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "on-primary-container": "#efefff",
+                    "on-tertiary": "#00363a",
+                    "on-error": "#690005",
+                    "inverse-primary": "#104af0",
+                    "surface-tint": "#b8c3ff",
+                    "on-surface-variant": "#c4c5d9",
+                    "on-background": "#e5e2e1",
+                    "background": "#131313",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "surface-variant": "#353534",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-container": "#531900",
+                    "on-secondary": "#5a1b00",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Anton"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg": ["Anton"],
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-xl": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-xl": ["80px", {"lineHeight": "80px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutalist-shadow-blue {
+            box-shadow: 4px 4px 0px 0px rgba(45, 91, 255, 1);
+        }
+        .brutalist-shadow-orange {
+            box-shadow: 4px 4px 0px 0px rgba(255, 94, 7, 1);
+        }
+        .brutalist-shadow-black {
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #434656;
+            border: 2px solid #131313;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(45, 91, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 8s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-hidden selection:bg-primary-container selection:text-white">
+<div class="scanline pointer-events-none"></div>
+<div class="flex h-screen w-full">
+<!-- Side Navigation Shell -->
+<aside class="h-screen w-64 border-r-2 border-outline bg-surface-container-low flex flex-col p-stack-md gap-stack-md shrink-0">
+<div class="mb-stack-lg">
+<div class="font-headline-md text-headline-md text-primary">ROOT_USER</div>
+<div class="font-label-caps text-label-caps text-outline">SYS_ADMIN_LOCAL</div>
+</div>
+<nav class="flex flex-col gap-unit flex-grow">
+<a class="flex items-center gap-stack-sm p-stack-sm bg-primary text-on-primary border-2 border-black shadow-[4px_4px_0px_0px_rgba(255,94,7,1)] transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dns</span>
+<span class="font-label-caps text-label-caps">Infrastructure</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-sm text-on-surface-variant border-2 border-transparent hover:border-outline-variant hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-caps text-label-caps">Containers</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-sm text-on-surface-variant border-2 border-transparent hover:border-outline-variant hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-caps text-label-caps">Storage</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-sm text-on-surface-variant border-2 border-transparent hover:border-outline-variant hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">lan</span>
+<span class="font-label-caps text-label-caps">Networking</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-sm text-on-surface-variant border-2 border-transparent hover:border-outline-variant hover:bg-surface-container-highest transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-label-caps text-label-caps">Security</span>
+</a>
+</nav>
+<button class="mt-auto bg-secondary-container text-on-secondary-container border-2 border-black font-label-caps text-label-caps p-stack-sm brutalist-shadow-black active:translate-y-0.5 active:translate-x-0.5 transition-all">
+                DEPLOY_NEW_NODE
+            </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-desktop py-stack-sm bg-background border-b-2 border-outline shadow-[4px_4px_0px_0px_rgba(45,91,255,1)] z-30">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter">COMMAND_CENTER_V1.0</div>
+<div class="flex items-center gap-stack-lg">
+<div class="flex items-center gap-stack-sm border-2 border-outline px-stack-sm py-unit bg-surface-container-low">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-label-mono text-label-mono text-on-surface w-48" placeholder="QUERY_SYSTEM..." type="text"/>
+</div>
+<div class="flex gap-stack-md">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-unit active:translate-y-0.5">settings_input_component</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-unit active:translate-y-0.5">notifications_active</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-unit active:translate-y-0.5">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Dashboard Grid -->
+<div class="p-margin-desktop overflow-y-auto flex-grow bg-surface-dim">
+<!-- Top Row: Service Cards -->
+<div class="grid grid-cols-4 gap-gutter mb-stack-lg">
+<!-- Infrastructure -->
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="font-label-caps text-label-caps text-primary">Infrastructure</span>
+<span class="material-symbols-outlined text-primary">dns</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">CPU 12%</div>
+<div class="font-label-mono text-label-mono text-outline">UPTIME: 14d 06h 22m</div>
+<div class="w-full h-1 bg-surface-container-highest mt-unit">
+<div class="h-full bg-primary" style="width: 12%"></div>
+</div>
+</div>
+<!-- Containers -->
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="font-label-caps text-label-caps text-primary">Containers</span>
+<span class="material-symbols-outlined text-primary">layers</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">8 Active</div>
+<div class="font-label-mono text-label-mono text-secondary-container">2 Paused / Alert</div>
+<div class="flex gap-unit mt-unit">
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-primary"></div>
+<div class="h-4 w-4 bg-secondary-container"></div>
+<div class="h-4 w-4 bg-secondary-container"></div>
+</div>
+</div>
+<!-- Storage -->
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="font-label-caps text-label-caps text-primary">Storage</span>
+<span class="material-symbols-outlined text-primary">database</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">72% Used</div>
+<div class="font-label-mono text-label-mono text-tertiary">HEALTH: OK</div>
+<div class="w-full h-1 bg-surface-container-highest mt-unit">
+<div class="h-full bg-secondary-container" style="width: 72%"></div>
+</div>
+</div>
+<!-- Networking -->
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="font-label-caps text-label-caps text-primary">Networking</span>
+<span class="material-symbols-outlined text-primary">lan</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">1.2 GB/s</div>
+<div class="font-label-mono text-label-mono text-outline">LATENCY: 12ms</div>
+<div class="flex items-end gap-1 h-8 mt-unit">
+<div class="w-2 h-4 bg-primary"></div>
+<div class="w-2 h-6 bg-primary"></div>
+<div class="w-2 h-3 bg-primary"></div>
+<div class="w-2 h-8 bg-primary"></div>
+<div class="w-2 h-5 bg-primary"></div>
+<div class="w-2 h-7 bg-primary"></div>
+</div>
+</div>
+</div><section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">ACTIVE_SERVICES</h2>
+<div class="flex flex-col gap-stack-sm">
+<!-- Service Row: Healthy -->
+<div class="flex justify-between items-center p-stack-md bg-surface-container border-2 border-black brutalist-shadow-blue">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">KUBE-API-SERVER</span>
+<span class="font-label-mono text-[10px] text-outline">UPTIME: 14d 06h 22m</span>
+</div>
+<span class="font-label-mono text-label-caps px-stack-sm py-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<!-- Service Row: Healthy -->
+<div class="flex justify-between items-center p-stack-md bg-surface-container border-2 border-black brutalist-shadow-blue">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">REDIS_MEMORY_NODE</span>
+<span class="font-label-mono text-[10px] text-outline">UPTIME: 08d 12h 45m</span>
+</div>
+<span class="font-label-mono text-label-caps px-stack-sm py-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<!-- Service Row: Issue/Stopped -->
+<div class="flex justify-between items-center p-stack-md bg-surface-container border-2 border-black brutalist-shadow-orange">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary-container">BACKUP_CRON_JOB</span>
+<span class="font-label-mono text-[10px] text-outline">LAST RUN: 2h 15m AGO (FAILED)</span>
+</div>
+<span class="font-label-mono text-label-caps px-stack-sm py-unit bg-secondary-container/20 text-secondary-container border border-secondary-container">STOPPED</span>
+</div>
+<!-- Service Row: Healthy -->
+<div class="flex justify-between items-center p-stack-md bg-surface-container border-2 border-black brutalist-shadow-blue">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">INGRESS_CONTROLLER</span>
+<span class="font-label-mono text-[10px] text-outline">UPTIME: 04d 22h 10m</span>
+</div>
+<span class="font-label-mono text-label-caps px-stack-sm py-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+</div>
+</section>
+<!-- Middle Row: Stasis & Load -->
+<div class="grid grid-cols-12 gap-gutter mb-stack-lg">
+<!-- Environment Stasis Panel -->
+<div class="col-span-8 bg-surface-container border-2 border-outline p-stack-lg brutalist-shadow-orange relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-full opacity-10 pointer-events-none">
+</div>
+<div class="flex justify-between items-start mb-stack-lg relative z-10">
+<div>
+<div class="font-label-caps text-label-caps text-secondary-container mb-unit">THERMAL MANAGEMENT</div>
+<div class="font-headline-lg text-headline-lg text-on-surface leading-tight">ENVIRONMENT STASIS</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-secondary-container">19.4°C</div>
+<div class="font-label-mono text-label-mono text-outline">HUMIDITY: 42%</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-lg relative z-10">
+<div class="border-l-4 border-primary p-stack-md bg-surface-container-low">
+<div class="font-label-caps text-label-caps text-primary mb-unit">FAN_SPEED_RPM</div>
+<div class="font-headline-md text-headline-md">4,200 <span class="text-body-md font-body-md text-outline">NOMINAL</span></div>
+</div>
+<div class="border-l-4 border-secondary-container p-stack-md bg-surface-container-low">
+<div class="font-label-caps text-label-caps text-secondary-container mb-unit">CRITICAL_TEMP_THRESHOLD</div>
+<div class="font-headline-md text-headline-md">85.0°C <span class="text-body-md font-body-md text-outline">WARNING</span></div>
+</div>
+</div>
+<button class="mt-stack-lg w-full bg-secondary-container text-black font-label-caps text-label-caps py-stack-md border-2 border-black brutalist-shadow-black hover:bg-orange-500 active:translate-y-0.5 active:translate-x-0.5 transition-all">
+                            INITIATE COOL DOWN CYCLE
+                        </button>
+</div>
+<!-- Performance Block -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex-grow flex flex-col">
+<div class="font-label-caps text-label-caps text-primary mb-stack-sm">CPU LOAD</div>
+<div class="flex-grow flex items-center justify-center py-stack-md relative">
+<div class="w-32 h-32 border-4 border-surface-container-highest rounded-full flex items-center justify-center relative">
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="60" stroke="currentColor" stroke-dasharray="376" stroke-dashoffset="331" stroke-width="8"></circle>
+</svg>
+<span class="font-headline-md text-headline-md">12%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex-grow">
+<div class="font-label-caps text-label-caps text-primary mb-stack-sm">MEMORY BUFFER</div>
+<div class="flex flex-col gap-unit">
+<div class="flex justify-between font-label-mono text-label-mono text-outline">
+<span>CACHE</span>
+<span>1.4GB / 8GB</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline">
+<div class="h-full bg-tertiary" style="width: 17.5%"></div>
+</div>
+<div class="flex justify-between font-label-mono text-label-mono text-outline mt-unit">
+<span>VRAM</span>
+<span>12.8GB / 16GB</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline">
+<div class="h-full bg-secondary-container" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Logs & Services -->
+<div class="grid grid-cols-12 gap-gutter pb-stack-lg">
+<!-- Terminal Output -->
+<div class="col-span-7 bg-black border-2 border-outline-variant p-stack-md font-label-mono text-label-mono text-primary h-64 overflow-hidden relative">
+<div class="absolute top-stack-sm right-stack-sm flex gap-unit">
+<div class="w-3 h-3 bg-red-600"></div>
+<div class="w-3 h-3 bg-yellow-600"></div>
+<div class="w-3 h-3 bg-green-600"></div>
+</div>
+<div class="flex flex-col gap-1 overflow-y-auto h-full pr-stack-sm" id="terminal-content">
+<div class="opacity-50">[08:22:41] SYSTEM_INITIALIZE: LOADING_ROOT_MODULES...</div>
+<div class="opacity-70 text-tertiary">[08:22:42] NETWORK_TCP: BINDING TO PORT 8080 - SUCCESS</div>
+<div class="opacity-90">[08:22:45] AUTH_SUBSYSTEM: ROOT_SESSION_STARTED BY UID: 0</div>
+<div class="text-secondary-container font-bold">[08:22:48] ALERT: THERMAL_SENSOR_3_TRIPPED (IGNORE_OVERRIDE_SET)</div>
+<div>[08:23:01] CONTAINER_MONITOR: SYNCING 10 NODES...</div>
+<div class="text-white border-l-2 border-white pl-2 mt-1">root@system:~$ tail -f /var/log/syslog</div>
+<div class="opacity-50">Jun 14 08:23:10 system-kernel: [102.433] pci-host: linked device 00:01.0</div>
+<div class="opacity-50">Jun 14 08:23:12 system-kernel: [104.912] eth0: link up, 1000Mbps, full duplex</div>
+<div class="opacity-50">Jun 14 08:23:15 system-kernel: [107.221] nvme0n1: format successful</div>
+<div class="text-primary animate-pulse">_</div>
+</div>
+</div>
+<!-- Active Services List -->
+<div class="col-span-5 bg-surface-container border-2 border-outline p-stack-md h-64 flex flex-col">
+<div class="font-label-caps text-label-caps text-primary mb-stack-sm border-b-2 border-outline pb-unit flex justify-between">
+<span>ACTIVE SERVICES</span>
+<span>STATUS</span>
+</div>
+<div class="overflow-y-auto flex-grow pr-unit">
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-mono text-label-mono">KUBE-API-SERVER</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-mono text-label-mono">REDIS_MEMORY_NODE</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-secondary-container text-[16px]">pending</span>
+<span class="font-label-mono text-label-mono">LOG_AGGREGATOR_V4</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-secondary-container/20 text-secondary-container border border-secondary-container">RESTARTING</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-mono text-label-mono">INGRESS_CONTROLLER</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-mono text-label-mono">POSTGRES_DB_MAIN</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-primary/20 text-primary border border-primary">HEALTHY</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-surface-container-highest hover:bg-surface-container-high transition-colors px-unit group">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-error text-[16px]">error</span>
+<span class="font-label-mono text-label-mono">BACKUP_CRON_JOB</span>
+</div>
+<span class="font-label-mono text-[10px] px-unit bg-error/20 text-error border border-error">FAILED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Bar -->
+<footer class="flex justify-between items-center px-gutter py-unit w-full bg-surface-container-lowest border-t-2 border-outline z-40 shrink-0">
+<div class="font-label-mono text-label-mono text-outline">SYSTEM_LOG_TERMINAL_V2.4_READY</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer" href="#">VIEW_FULL_LOGS</a>
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer" href="#">CLEAR_BUFFER</a>
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer" href="#">EXPORT_CSV</a>
+</div>
+<div class="font-label-caps text-label-caps text-secondary-container">STASIS_MODE: NORMAL</div>
+</footer>
+</main>
+</div>
+<script>
+        // Simulate terminal logging
+        const terminal = document.getElementById('terminal-content');
+        const logs = [
+            "SCANNING_DEVICES... DONE",
+            "SYNCING_WITH_NODE_MASTER_01",
+            "REALLOCATING_RESOURCE_POOLS...",
+            "HEARTBEAT_SIGNAL: 124ms",
+            "CHECKING_INTEGRITY_SUMS... OK",
+            "PACKET_LOSS_DETECTION: 0.00%",
+            "THERMAL_STATE: BALANCED",
+            "ENCRYPTION_LAYER_ACTIVE",
+            "FLUSHING_TEMP_CACHE..."
+        ];
+
+        setInterval(() => {
+            const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+            const logLine = document.createElement('div');
+            logLine.className = 'opacity-50 text-[10px]';
+            logLine.textContent = `[${time}] ${logs[Math.floor(Math.random() * logs.length)]}`;
+            terminal.appendChild(logLine);
+            if (terminal.children.length > 50) {
+                terminal.removeChild(terminal.firstChild);
+            }
+            terminal.scrollTop = terminal.scrollHeight;
+        }, 3000);
+
+        // Simple button interaction
+        const coolButton = document.querySelector('button');
+        coolButton.addEventListener('click', () => {
+            const originalText = coolButton.textContent;
+            coolButton.textContent = "INITIATING_COOL_DOWN...";
+            coolButton.classList.add('bg-primary');
+            setTimeout(() => {
+                coolButton.textContent = originalText;
+                coolButton.classList.remove('bg-primary');
+            }, 2000);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HUB.01 Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&amp;family=Libre+Caslon+Text&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#3c475d",
+                    "outline-variant": "#dbc1bb",
+                    "surface-container-highest": "#d7ec95",
+                    "surface-container": "#e2f79f",
+                    "background": "#f4ffc9",
+                    "tertiary-fixed-dim": "#abd600",
+                    "inverse-surface": "#293500",
+                    "secondary-container": "#d7e2ff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f4ffc9",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdad2",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#4d6300",
+                    "surface-dim": "#cee38d",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#e5faa2",
+                    "secondary": "#545e76",
+                    "on-tertiary-container": "#f8ffd9",
+                    "on-primary-fixed-variant": "#7a2f1c",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb4a2",
+                    "tertiary-container": "#637d00",
+                    "surface-tint": "#984631",
+                    "on-surface": "#161e00",
+                    "primary-container": "#b35a44",
+                    "surface-container-high": "#dcf19a",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#101b30",
+                    "tertiary-fixed": "#c3f400",
+                    "on-error": "#ffffff",
+                    "primary": "#94422e",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "on-primary-fixed": "#3c0700",
+                    "on-background": "#161e00",
+                    "on-primary-container": "#fffaf9",
+                    "secondary-fixed-dim": "#bbc6e2",
+                    "on-tertiary-fixed": "#161e00",
+                    "surface-container-low": "#e8fda4",
+                    "outline": "#88726d",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#55433e",
+                    "secondary-fixed": "#d7e2ff",
+                    "on-tertiary-fixed-variant": "#3c4d00",
+                    "on-secondary-container": "#5a647c",
+                    "surface-bright": "#f4ffc9",
+                    "surface-variant": "#d7ec95",
+                    "navy-custom": "#1B263B",
+                    "terracotta-custom": "#B35A44",
+                    "olive-custom": "#708238",
+                    "optic-yellow": "#CCFF00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "margin-edge": "32px",
+                    "stack-sm": "8px",
+                    "border-weight": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Archivo Narrow"],
+                    "headline-xl": ["Archivo Narrow"],
+                    "body-md": ["Archivo Narrow"],
+                    "headline-lg-mobile": ["Archivo Narrow"],
+                    "detail-serif": ["Libre Caslon Text"],
+                    "headline-lg": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "detail-serif": ["20px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F8F9FA;
+            color: #1B263B;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #1B263B;
+        }
+        .brutalist-shadow-sm {
+            box-shadow: 2px 2px 0px 0px #1B263B;
+        }
+        .active-press:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #1B263B;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-edge py-stack-sm w-full sticky top-0 z-50 bg-surface border-b-[4px] border-on-secondary-fixed-variant shadow-[4px_4px_0px_0px_#101b30]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile uppercase font-bold text-on-surface">SYS_HUB_V1.0</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="p-6 space-y-gutter">
+<!-- Header Section -->
+<section class="flex flex-col gap-2">
+<h2 class="text-[64px] font-extrabold leading-none tracking-tighter text-navy-custom">HUB.01</h2>
+<div class="flex items-center gap-2">
+<div class="bg-optic-yellow px-4 py-1 border-[3px] border-navy-custom brutalist-shadow-sm inline-flex items-center gap-2">
+<span class="w-2 h-2 bg-navy-custom rounded-full animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-navy-custom">ONLINE</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant opacity-70">UPTIME: 14D 02H</span>
+</div>
+</section>
+<!-- High-Density Service Grid -->
+<section class="grid grid-cols-2 gap-4 pb-8">
+<!-- Home AI (Primary/Alert Style) -->
+<div class="bg-terracotta-custom p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="smart_toy">smart_toy</span>
+<span class="bg-optic-yellow text-navy-custom font-label-caps text-[10px] px-1 border-2 border-navy-custom">CORE</span>
+</div>
+<div>
+<p class="font-label-caps text-white text-xs opacity-90">HOME AI</p>
+<p class="font-headline-lg-mobile text-white leading-none">ACTIVE</p>
+</div>
+</div>
+<!-- Printer 1 (Stable Style) -->
+<div class="bg-olive-custom p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="print">print</span>
+</div>
+<div>
+<p class="font-label-caps text-white text-xs opacity-90">PRINTER 1</p>
+<p class="font-headline-lg-mobile text-white leading-none">IDLE</p>
+</div>
+</div>
+<!-- Storage (Surface/Standard) -->
+<div class="bg-surface-bright p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-navy-custom text-3xl" data-icon="database">database</span>
+</div>
+<div>
+<p class="font-label-caps text-navy-custom text-xs opacity-70">STORAGE</p>
+<p class="font-headline-lg-mobile text-navy-custom leading-none">72%</p>
+</div>
+</div>
+<!-- Net Traffic (Surface/Standard) -->
+<div class="bg-surface-bright p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-navy-custom text-3xl" data-icon="lan">lan</span>
+</div>
+<div>
+<p class="font-label-caps text-navy-custom text-xs opacity-70">NET TRAFFIC</p>
+<p class="font-headline-lg-mobile text-navy-custom leading-none">1.2GB/s</p>
+</div>
+</div>
+<!-- Temp Sensor -->
+<div class="bg-surface-bright p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-navy-custom text-3xl" data-icon="thermostat">thermostat</span>
+</div>
+<div>
+<p class="font-label-caps text-navy-custom text-xs opacity-70">NODE TEMP</p>
+<p class="font-headline-lg-mobile text-navy-custom leading-none">22°C</p>
+</div>
+</div>
+<!-- Security (Stable Style) -->
+<div class="bg-olive-custom p-4 border-[3px] border-navy-custom brutalist-shadow active-press transition-all flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="security">security</span>
+</div>
+<div>
+<p class="font-label-caps text-white text-xs opacity-90">SECURITY</p>
+<p class="font-headline-lg-mobile text-white leading-none">SECURE</p>
+</div>
+</div>
+</section>
+<!-- The Scoreboard (Key Metric) -->
+<!-- Compact Log -->
+</main>
+<!-- BottomNavBar -->
+<nav class="lg:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-surface border-t-[4px] border-on-secondary-fixed-variant shadow-[0px_-4px_0px_0px_#101b30]">
+<a class="flex flex-col items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed border-[2px] border-on-secondary-fixed-variant shadow-[2px_2px_0px_0px_#101b30] px-4 py-1 active:translate-y-1 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="router">router</span>
+<span class="font-label-caps text-label-caps">Nodes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container p-2" href="#">
+<span class="material-symbols-outlined" data-icon="segment">segment</span>
+<span class="font-label-caps text-label-caps">Logs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container p-2" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-label-caps text-label-caps">Shell</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container p-2" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-terracotta-custom border-[3px] border-navy-custom brutalist-shadow flex items-center justify-center active-press text-white z-40">
+<span class="material-symbols-outlined text-4xl" data-icon="add">add</span>
+</button>
+<script>
+        // Micro-interaction for log simulation
+        const logs = [
+            "PACKET_LOSS: 0.002%",
+            "SERVICE: SHELL_V2 DEPLOYED",
+            "USER: GUEST ACCESS REVOKED",
+            "BACKUP: COMPLETE (LOCAL_STORAGE)",
+            "NODE_09: REBOOTING..."
+        ];
+        const logContainer = document.querySelector('.font-mono');
+        setInterval(() => {
+            const p = document.createElement('p');
+            const time = new Date().toLocaleTimeString('en-GB', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            p.innerHTML = `<span class="opacity-50">[${time}]</span> ${logs[Math.floor(Math.random() * logs.length)]}`;
+            logContainer.insertBefore(p, logContainer.lastElementChild);
+            if (logContainer.children.length > 8) {
+                logContainer.removeChild(logContainer.children[0]);
+            }
+        }, 5000);
+    </script>
+</body></html>

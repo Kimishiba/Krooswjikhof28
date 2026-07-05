@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_HUB_V1.0 | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#3c475d",
+                    "outline-variant": "#dbc1bb",
+                    "surface-container-highest": "#d7ec95",
+                    "surface-container": "#e2f79f",
+                    "background": "#f4ffc9",
+                    "tertiary-fixed-dim": "#abd600",
+                    "inverse-surface": "#293500",
+                    "secondary-container": "#d7e2ff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f4ffc9",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdad2",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#4d6300",
+                    "surface-dim": "#cee38d",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#e5faa2",
+                    "secondary": "#545e76",
+                    "on-tertiary-container": "#f8ffd9",
+                    "on-primary-fixed-variant": "#7a2f1c",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb4a2",
+                    "tertiary-container": "#637d00",
+                    "surface-tint": "#984631",
+                    "on-surface": "#161e00",
+                    "primary-container": "#b35a44",
+                    "surface-container-high": "#dcf19a",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#101b30",
+                    "tertiary-fixed": "#c3f400",
+                    "on-error": "#ffffff",
+                    "primary": "#94422e",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "on-primary-fixed": "#3c0700",
+                    "on-background": "#161e00",
+                    "on-primary-container": "#fffaf9",
+                    "secondary-fixed-dim": "#bbc6e2",
+                    "on-tertiary-fixed": "#161e00",
+                    "surface-container-low": "#e8fda4",
+                    "outline": "#88726d",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#55433e",
+                    "secondary-fixed": "#d7e2ff",
+                    "on-tertiary-fixed-variant": "#3c4d00",
+                    "on-secondary-container": "#5a647c",
+                    "surface-bright": "#f4ffc9",
+                    "surface-variant": "#d7ec95",
+                    "navy-baseline": "#1B263B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "margin-edge": "32px",
+                    "stack-sm": "8px",
+                    "border-weight": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Archivo Narrow"],
+                    "headline-xl": ["Archivo Narrow"],
+                    "body-md": ["Archivo Narrow"],
+                    "headline-lg-mobile": ["Archivo Narrow"],
+                    "detail-serif": ["Libre Caslon Text"],
+                    "headline-lg": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "detail-serif": ["20px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f4ffc9; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hard-shadow { shadow-[4px_4px_0px_0px_#1B263B]; }
+        .active-shadow-none:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px 0px #1B263B; }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Top Navigation (Shell Component) -->
+<header class="flex justify-between items-center px-margin-edge py-stack-sm w-full sticky top-0 z-50 bg-surface border-b-[4px] border-navy-baseline shadow-[4px_4px_0px_0px_#1B263B]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface uppercase tracking-tighter">SYS_HUB_V1.0</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors" href="#">DASHBOARD</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">NETWORK</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">CONFIG</a>
+</div>
+<button class="material-symbols-outlined text-on-surface p-2 hover:bg-tertiary-fixed transition-colors active:translate-x-[2px] active:translate-y-[2px]">sensors</button>
+</div>
+</header>
+<!-- Sidebar (Shell Component) -->
+<nav class="hidden lg:flex flex-col w-64 h-screen fixed left-0 top-0 pt-[100px] bg-navy-baseline border-r-[4px] border-navy-baseline z-40 text-surface">
+<div class="px-6 py-4">
+<h2 class="font-label-caps text-label-caps text-tertiary-fixed mb-8">ROOT_SERVICES</h2>
+<div class="space-y-4">
+<a class="flex items-center gap-4 p-3 bg-tertiary-fixed text-on-tertiary-fixed font-bold border-[2px] border-surface shadow-[4px_4px_0px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dns</span>
+<span class="font-label-caps text-label-caps">Infrastructure</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-surface-variant hover:bg-on-secondary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-caps text-label-caps">Containers</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-surface-variant hover:bg-on-secondary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-caps text-label-caps">Storage</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-surface-variant hover:bg-on-secondary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">lan</span>
+<span class="font-label-caps text-label-caps">Networking</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-surface-variant hover:bg-on-secondary-fixed-variant transition-colors" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-label-caps text-label-caps">Security</span>
+</a>
+</div>
+</div>
+<div class="mt-auto p-6 border-t-[2px] border-on-secondary-fixed-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container border-2 border-surface"></div>
+<div>
+<p class="font-label-caps text-[12px]">ADMIN_USER</p>
+<p class="text-[10px] opacity-60">LEVEL_0_ACCESS</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 p-margin-edge">
+<div class="asymmetric-grid">
+<!-- System Root Header -->
+<section class="col-span-12 mb-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+<button class="flex flex-col items-center justify-center gap-4 p-8 bg-tertiary-fixed text-on-tertiary-fixed border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B] hover:bg-on-tertiary-fixed hover:text-tertiary-fixed transition-all active:translate-x-1 active:translate-y-1 active:shadow-none"><span class="material-symbols-outlined text-5xl">dns</span><span class="font-label-caps text-xl uppercase">Infrastructure</span><div class="flex gap-4 mt-2 font-mono text-[10px] font-bold bg-on-tertiary-fixed text-tertiary-fixed px-2 py-1 border border-navy-baseline"><span>CPU: 12%</span><span>UP: 14d</span></div></button>
+<button class="flex flex-col items-center justify-center gap-4 p-8 bg-primary-container text-on-primary border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B] hover:bg-primary hover:text-on-primary transition-all active:translate-x-1 active:translate-y-1 active:shadow-none"><span class="material-symbols-outlined text-5xl">layers</span><span class="font-label-caps text-xl uppercase">Containers</span><div class="flex gap-4 mt-2 font-mono text-[10px] font-bold bg-primary text-on-primary px-2 py-1 border border-navy-baseline"><span>8 ACTIVE</span><span>2 PAUSED</span></div></button>
+<button class="flex flex-col items-center justify-center gap-4 p-8 bg-surface text-on-surface border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B] hover:bg-on-surface-variant hover:text-surface transition-all active:translate-x-1 active:translate-y-1 active:shadow-none"><span class="material-symbols-outlined text-5xl">database</span><span class="font-label-caps text-xl uppercase">Storage</span><div class="flex gap-4 mt-2 font-mono text-[10px] font-bold bg-on-surface text-surface px-2 py-1 border border-navy-baseline"><span>72% USED</span><span>HEALTH: OK</span></div></button>
+<button class="flex flex-col items-center justify-center gap-4 p-8 bg-navy-baseline text-surface border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#B35A44] hover:bg-on-secondary-fixed-variant transition-all active:translate-x-1 active:translate-y-1 active:shadow-none"><span class="material-symbols-outlined text-5xl">lan</span><span class="font-label-caps text-xl uppercase">Networking</span><div class="flex gap-4 mt-2 font-mono text-[10px] font-bold bg-surface text-navy-baseline px-2 py-1 border border-navy-baseline"><span>1.2 GB/s</span><span>LATENCY: 12ms</span></div></button>
+</section><section class="col-span-12 mb-8">
+<div class="flex flex-col md:flex-row justify-between items-end gap-4 border-b-[8px] border-navy-baseline pb-4">
+<h2 class="font-headline-xl text-headline-xl uppercase">SYSTEM ROOT</h2>
+<div class="bg-tertiary-fixed px-6 py-2 border-[4px] border-navy-baseline shadow-[4px_4px_0px_0px_#1B263B]">
+<p class="font-label-caps text-label-caps text-on-tertiary-fixed">UPTIME: 142:12:04:88</p>
+</div>
+</div>
+</section>
+<!-- 3. Environment Control Block (Terracotta Red) -->
+<!-- 6. Metric Widgets (CPU/RAM) -->
+<div class="col-span-12 md:col-span-5 flex flex-col gap-gutter">
+<!-- CPU Scoreboard -->
+<div class="bg-tertiary-fixed p-6 border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B]">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-caps text-label-caps">CPU_LOAD</span>
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div class="text-[120px] font-black font-headline-xl leading-none text-on-tertiary-fixed">48<span class="text-4xl">%</span></div>
+<div class="w-full bg-navy-baseline h-6 mt-4 border-2 border-navy-baseline overflow-hidden">
+<div class="bg-on-tertiary-fixed h-full w-[48%]"></div>
+</div>
+</div>
+<!-- RAM Scoreboard -->
+<div class="bg-surface p-6 border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B]">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Memory_Buffer</span>
+<span class="material-symbols-outlined text-primary">data_usage</span>
+</div>
+<div class="text-[120px] font-black font-headline-xl leading-none text-primary">12<span class="text-4xl">GB</span></div>
+<p class="font-detail-serif italic text-on-surface-variant">Allocated to persistent storage arrays.</p>
+</div>
+</div><section class="col-span-12 md:col-span-7 bg-primary-container p-8 border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B] text-on-primary">
+<div class="flex justify-between items-start mb-12">
+<h3 class="font-headline-lg text-headline-lg uppercase leading-none">ENVIRONMENT<br/>STASIS</h3>
+<span class="material-symbols-outlined text-5xl">thermostat</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div class="p-4 border-[2px] border-on-primary-container bg-primary">
+<p class="font-label-caps text-label-caps opacity-80">CORE_TEMP</p>
+<p class="text-4xl font-bold font-headline-lg">24.5°C</p>
+</div>
+<div class="p-4 border-[2px] border-on-primary-container bg-primary">
+<p class="font-label-caps text-label-caps opacity-80">HUMIDITY</p>
+<p class="text-4xl font-bold font-headline-lg">42%</p>
+</div>
+<div class="p-4 border-[2px] border-on-primary-container bg-tertiary-fixed text-on-tertiary-fixed">
+<p class="font-label-caps text-label-caps">FANS</p>
+<p class="text-4xl font-bold font-headline-lg uppercase">AUTO</p>
+</div>
+</div>
+<div class="mt-12">
+<button class="w-full py-4 bg-tertiary-fixed text-on-tertiary-fixed font-bold border-[4px] border-navy-baseline shadow-[4px_4px_0px_0px_#1B263B] hover:bg-on-tertiary-fixed hover:text-tertiary-fixed transition-all active:translate-x-1 active:translate-y-1 active:shadow-none uppercase font-label-caps text-xl">Initiate Cool Down Cycle</button>
+</div>
+</section>
+<!-- 4. Terminal/Log Widget (Deep Navy & Electric Yellow) -->
+<section class="col-span-12 md:col-span-8 bg-navy-baseline p-6 border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#B35A44] font-mono text-tertiary-fixed">
+<div class="flex items-center gap-3 border-b-2 border-on-secondary-fixed-variant pb-3 mb-4">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 bg-error rounded-full"></div>
+<div class="w-3 h-3 bg-tertiary-fixed rounded-full"></div>
+<div class="w-3 h-3 bg-secondary rounded-full"></div>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-surface-variant">terminal_log_output</span>
+</div>
+<div class="h-64 overflow-y-auto space-y-2 text-sm">
+<p>&gt; initializing system_root_v1.0.4...</p>
+<p class="text-surface">&gt; checking infrastructure nodes... [OK]</p>
+<p class="text-surface">&gt; connecting to database cluster... [OK]</p>
+<p class="text-error">&gt; warning: storage threshold reached (88%)</p>
+<p>&gt; mounting external assets...</p>
+<p>&gt; heartbeat signal active at 0.04ms</p>
+<p class="text-surface">&gt; user admin logged in from 192.168.1.1</p>
+<p>&gt; syncing docker containers...</p>
+<p class="animate-pulse">&gt; _</p>
+</div>
+</section>
+<!-- 5. Service Monitoring Cards (Spanish Olive) -->
+<section class="col-span-12 md:col-span-4 bg-[#708238] p-6 border-[4px] border-navy-baseline shadow-[8px_8px_0px_0px_#1B263B] text-surface">
+<h3 class="font-label-caps text-label-caps mb-6 border-b-2 border-surface pb-2">ACTIVE_SERVICES</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 border-2 border-surface">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Web_Proxy</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 font-bold">LIVE</span>
+</div>
+<div class="flex justify-between items-center p-3 border-2 border-surface">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Auth_Daemon</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 font-bold">LIVE</span>
+</div>
+<div class="flex justify-between items-center p-3 border-2 border-surface opacity-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">error</span>
+<span class="font-label-caps text-label-caps uppercase">Email_Relay</span>
+</div>
+<span class="bg-error text-on-error text-[10px] px-2 py-0.5 font-bold">DOWN</span>
+</div>
+<div class="flex justify-between items-center p-3 border-2 border-surface">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Cron_Jobs</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-0.5 font-bold">LIVE</span>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t-2 border-surface/30">
+<div class="w-full h-24 grayscale brightness-50 contrast-125 border-2 border-surface" data-alt="A macro photograph of professional tennis court clay with deep orange and earthy red textures. Sharp lighting captures the grainy, physical reality of the surface, echoing a brutalist, industrial aesthetic that is grounded and authoritative." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlU79hck1owQBY2HljHfmLrq_BNWwR_gMI0HKdLsTwcpek_n9y4ip3BYAZ5KFiUGZ3sxMyBst04FfoGxtPRE19ou94NyiYJ2udDfAEyGCU1SKxCeOtS6W_Uz27FJ86E06lZVoGOeUdCXYiiUZGIHGQ5ew1PvysiFJOLKCnz3eJ-_h6bzzj1IoCFp2ViSXSoKPwdsrizMYyMXZuj08wtLdPGK7zkxfVp6MayckPkh9HDKVpb8XckO1w5IMSeZ-Kd9rxCcAmlrdoT9oG')"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (Shell Component - Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-surface border-t-[4px] border-navy-baseline shadow-[0px_-4px_0px_0px_#1B263B]">
+<a class="flex flex-col items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed border-[2px] border-navy-baseline shadow-[2px_2px_0px_0px_#1B263B] px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">router</span>
+<span class="font-label-caps text-[10px] uppercase">Nodes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">segment</span>
+<span class="font-label-caps text-[10px] uppercase">Logs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-label-caps text-[10px] uppercase">Shell</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-caps text-[10px] uppercase">Stats</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for hard shadows
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                if (el.classList.contains('shadow-[4px_4px_0px_0px_#1B263B]')) {
+                    el.style.transform = 'translate(2px, 2px)';
+                    el.style.boxShadow = '2px 2px 0px 0px #1B263B';
+                }
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+                el.style.boxShadow = '';
+            });
+        });
+    </script>
+</body></html>

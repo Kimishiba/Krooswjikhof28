@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <style>
+      .interactive {
+        cursor: pointer;
+        transition: fill 0.3s ease, fill-opacity 0.3s ease, stroke 0.3s ease, stroke-opacity 0.3s ease, filter 0.3s ease;
+      }
+      .light-off {
+        fill: #ffffff;
+        fill-opacity: 0.05;
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-opacity: 0.4;
+      }
+      .light-on {
+        fill: #ffeb3b;
+        fill-opacity: 0.35;
+        stroke: #ffeb3b;
+        stroke-width: 2;
+        stroke-opacity: 0.9;
+        filter: drop-shadow(0px 0px 8px rgba(255, 235, 59, 0.6));
+      }
+      .wall {
+        stroke: #ffffff;
+        stroke-width: 3;
+        fill: none;
+      }
+      .furniture {
+        stroke: #ffffff;
+        stroke-width: 1.5;
+        stroke-opacity: 0.7;
+        fill: #1a1a1a;
+      }
+      .background {
+        fill: #000000;
+      }
+    </style>
+  </defs>
+
+  <!-- Black Background -->
+  <rect class="background" width="800" height="800" />
+
+  <!-- Outer Walls -->
+  <path class="wall" d="M 50 50 L 750 50 L 750 650 L 570 650 L 570 750 L 230 750 L 230 680 L 50 680 Z" />
+  
+  <!-- Partition wall -->
+  <path class="wall" d="M 50 480 L 230 480" />
+
+  <!-- ================= LIVING ROOM (Left) ================= -->
+  <!-- Main Couch (light.living_room_living_room) -->
+  <g id="light.living_room_living_room" class="interactive light-off">
+    <rect x="110" y="320" width="160" height="80" rx="10" />
+    <rect x="110" y="240" width="60" height="80" rx="10" />
+  </g>
+  
+  <!-- Coffee Table (light.hue_color_lamp_1) -->
+  <g id="light.hue_color_lamp_1" class="interactive light-off">
+    <rect x="200" y="240" width="60" height="60" />
+  </g>
+
+  <!-- TV Lights (switch.tv_lights) -->
+  <g id="switch.tv_lights" class="interactive light-off">
+    <rect x="120" y="100" width="140" height="30" />
+    <line x1="130" y1="125" x2="250" y2="125" stroke="#ffffff" stroke-width="4" />
+  </g>
+
+  <!-- ================= DINING AREA (Bottom) ================= -->
+  <!-- Dining Table (switch.tablelight) -->
+  <g id="switch.tablelight" class="interactive light-off">
+    <rect x="270" y="550" width="180" height="90" rx="5" />
+    <rect x="300" y="515" width="30" height="30" />
+    <rect x="350" y="515" width="30" height="30" />
+    <rect x="400" y="515" width="30" height="30" />
+    <rect x="300" y="645" width="30" height="30" />
+    <rect x="350" y="645" width="30" height="30" />
+    <rect x="400" y="645" width="30" height="30" />
+  </g>
+
+  <!-- ================= KITCHEN (Right) ================= -->
+  <!-- Kitchen Counter (switch.kitchen) -->
+  <g id="switch.kitchen" class="interactive light-off">
+    <path d="M 450 60 L 740 60 L 740 380 L 680 380 L 680 120 L 450 120 Z" />
+    <!-- Stove -->
+    <rect x="490" y="70" width="60" height="40" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+    <circle cx="505" cy="90" r="10" fill="none" stroke="#ffffff" stroke-opacity="0.8" />
+    <circle cx="535" cy="90" r="10" fill="none" stroke="#ffffff" stroke-opacity="0.8" />
+    <!-- Sink -->
+    <rect x="690" y="200" width="40" height="60" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+    <circle cx="710" cy="230" r="8" fill="none" stroke="#ffffff" stroke-opacity="0.8" />
+  </g>
+
+  <!-- Kitchen Island (switch.kitchenisland) -->
+  <g id="switch.kitchenisland" class="interactive light-off">
+    <rect x="400" y="220" width="220" height="80" rx="5" />
+    <circle cx="430" cy="330" r="15" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.7" />
+    <circle cx="480" cy="330" r="15" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.7" />
+    <circle cx="530" cy="330" r="15" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.7" />
+    <circle cx="580" cy="330" r="15" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.7" />
+  </g>
+
+</svg>

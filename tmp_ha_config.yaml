@@ -1,0 +1,95 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+wake_on_lan:
+input_number:
+  saved_denon_volume:
+    name: Saved Denon Volume
+    initial: 0.35
+    min: 0
+    max: 1
+    step: 0.01
+input_boolean:
+  vacuum_cleaned_today:
+    name: Vacuum Cleaned Today
+    initial: off
+
+template:
+  - sensor:
+      - name: "Pixel 10 Weight kg"
+        unique_id: "pixel_10_weight_kg"
+        unit_of_measurement: "kg"
+        state: "{{ (states('sensor.pixel_10_weight') | float(0) / 1000) | round(2) }}"
+        state_class: measurement
+      - name: "Pixel 10 Sleep Hours"
+        unique_id: "pixel_10_sleep_hours"
+        unit_of_measurement: "h"
+        state: "{{ (states('sensor.pixel_10_sleep_duration') | float(0) / 60) | round(2) }}"
+        state_class: measurement
+
+command_line:
+  - sensor:
+      name: Latest Podcast Episode
+      unique_id: latest_podcast_episode
+      command: "python3 -c \"import urllib.request, xml.etree.ElementTree as ET, json; r = urllib.request.urlopen('https://feeds.npr.org/510318/podcast.xml').read(); root = ET.fromstring(r); url = root.find('.//enclosure').attrib['url']; print(json.dumps({'url': url}))\""
+      value_template: "Active"
+      json_attributes:
+        - url
+      scan_interval: 3600
+
+
+light:
+  - platform: group
+    name: All House Lights
+    entities:
+      - switch.hallwaylight_sonoffhallwaylight
+      - switch.sonoff_sonoffhallwaymiddle
+      - switch.kitchen
+      - switch.kitchenisland
+      - switch.tablelight
+      - switch.tv_lights
+      - light.hue_color_lamp_1
+
+
+
+
+google_assistant:
+  project_id: vinted-ai-499214
+  service_account: !include google_key.json
+  report_state: true
+  exposed_domains:
+    - switch
+    - light
+    - vacuum
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.36      # Your Unraid Server IP
+    - 172.17.0.0/16     # Unraid Docker internal range
+    - 172.16.0.0/12     # Docker internal bridge subnets
+    - 192.168.1.0/24    # Local network
+
+
+sensor:
+  - platform: rest
+    name: "Unraid CPU Usage"
+    resource: http://192.168.1.36:8090/
+    value_template: '{{ value_json.cpu_percent }}'
+    unit_of_measurement: '%'
+    scan_interval: 10
+  - platform: rest
+    name: "Unraid RAM Usage"
+    resource: http://192.168.1.36:8090/
+    value_template: '{{ value_json.ram_percent }}'
+    unit_of_measurement: '%'
+    scan_interval: 10

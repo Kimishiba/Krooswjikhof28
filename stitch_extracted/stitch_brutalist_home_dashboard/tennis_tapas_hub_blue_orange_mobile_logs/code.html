@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COMMAND_CENTER_V1.0 - LOGS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Archivo+Narrow:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#ff5e07",
+                    "tertiary-container": "#007981",
+                    "tertiary": "#00dbe9",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#434656",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "outline": "#8e90a2",
+                    "secondary": "#ffb59a",
+                    "on-primary-fixed": "#001355",
+                    "tertiary-fixed": "#7df4ff",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#802a00",
+                    "secondary-fixed": "#ffdbce",
+                    "surface-bright": "#3a3939",
+                    "surface-container-highest": "#353534",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "on-secondary-fixed": "#370e00",
+                    "primary-fixed": "#dde1ff",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#002387",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-tertiary-fixed": "#002022",
+                    "on-tertiary-container": "#c4faff",
+                    "primary-container": "#2d5bff",
+                    "primary": "#b8c3ff",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "on-primary-container": "#efefff",
+                    "on-tertiary": "#00363a",
+                    "on-error": "#690005",
+                    "inverse-primary": "#104af0",
+                    "surface-tint": "#b8c3ff",
+                    "on-surface-variant": "#c4c5d9",
+                    "on-background": "#e5e2e1",
+                    "background": "#131313",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "surface-variant": "#353534",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-container": "#531900",
+                    "on-secondary": "#5a1b00",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Anton"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg": ["Anton"],
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-xl": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-xl": ["80px", {"lineHeight": "80px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .terminal-container {
+            position: relative;
+            background: #0e0e0e;
+            overflow: hidden;
+        }
+
+        .terminal-container::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 3;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 6s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+
+        .brutalist-border-b {
+            border-bottom: 2px solid #8e90a2;
+        }
+
+        .brutalist-shadow-blue {
+            box-shadow: 4px 4px 0px 0px rgba(45, 91, 255, 1);
+        }
+
+        .brutalist-shadow-orange {
+            box-shadow: 4px 4px 0px 0px rgba(255, 94, 7, 1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c1b1b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #434656;
+            border: 1px solid #0e0e0e;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-mobile py-stack-md border-b-2 border-outline shadow-[4px_4px_0px_0px_rgba(45,91,255,1)] z-50">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary tracking-tighter">COMMAND_CENTER_V1.0</span>
+<span class="font-label-mono text-label-mono text-secondary-container">SYS_ADMIN_LOCAL // ROOT_USER</span>
+</div>
+<div class="flex gap-stack-md">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high transition-colors p-2 active:translate-y-0.5 active:translate-x-0.5" data-icon="notifications_active">notifications_active</button>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high transition-colors p-2 active:translate-y-0.5 active:translate-x-0.5" data-icon="settings_input_component">settings_input_component</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow p-margin-mobile pb-24 space-y-stack-md">
+<!-- Status Header -->
+<div class="flex justify-between items-end border-l-4 border-secondary-container pl-stack-md">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background uppercase">System Logs</h1>
+<p class="font-label-mono text-label-mono text-outline uppercase tracking-widest">Buffer: 4096KB / 100% Online</p>
+</div>
+<div class="bg-secondary-container px-stack-sm py-unit font-label-caps text-label-caps text-on-secondary-container flex items-center gap-1">
+<span class="w-2 h-2 bg-on-secondary-container inline-block"></span> LIVE_FEED
+            </div>
+</div>
+<!-- Terminal Output -->
+<div class="terminal-container border-2 border-outline h-[530px] flex flex-col brutalist-shadow-orange">
+<div class="scanline"></div>
+<!-- Terminal Header -->
+<div class="bg-surface-container-highest border-b-2 border-outline px-stack-sm py-1 flex justify-between items-center shrink-0">
+<span class="font-label-mono text-label-mono text-on-surface-variant">SERIAL_PORT_TTY0:8080</span>
+<div class="flex gap-2">
+<span class="w-2 h-2 bg-error rounded-full"></span>
+<span class="w-2 h-2 bg-secondary-container rounded-full"></span>
+<span class="w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+</div>
+<!-- Log Stream -->
+<div class="flex-grow p-stack-md overflow-y-auto font-label-mono text-label-mono space-y-1 relative z-10" id="log-output">
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:11]</span>
+<span class="text-tertiary">KERN: INITIALIZING SUB_SYSTEM_A...</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:12]</span>
+<span class="text-secondary-container">WARN: LATENCY DETECTED ON NODE_04</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:15]</span>
+<span class="text-on-surface">AUTH: USER_ROOT GRANTED ELEVATED ACCESS</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:18]</span>
+<span class="text-tertiary">NET: ESTABLISHED HANDSHAKE WITH CLUSTER_X</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:22]</span>
+<span class="text-on-surface">DB: SYNCING TABLES [0/14]...</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:25]</span>
+<span class="text-secondary-container">LOG: PACKET_LOSS_RECOVERY ACTIVATED</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:30]</span>
+<span class="text-tertiary">KERN: CPU_CORE_07 VOLTAGE STABILIZED</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:31]</span>
+<span class="text-on-surface">APP: CONTAINER_ID_99 READY</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:35]</span>
+<span class="text-tertiary">SYS: HEARTBEAT SENT (PONG)</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:40]</span>
+<span class="text-secondary-container">ERR: NULL_POINTER_REF IN VOL_MNT_01</span>
+</div>
+<div class="flex gap-3">
+<span class="text-outline shrink-0">[08:42:42]</span>
+<span class="text-on-surface">SYS: REBALANCING STORAGE NODES...</span>
+</div>
+<!-- Interactive Log Placeholder -->
+<div id="dynamic-logs"></div>
+<div class="flex gap-2 items-center">
+<span class="text-secondary-container animate-pulse">_</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-stack-md">
+<button class="bg-primary text-on-primary-fixed font-label-caps text-label-caps py-stack-md border-2 border-black brutalist-shadow-blue flex items-center justify-center gap-2 active:translate-y-0.5 active:translate-x-0.5 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span> EXPORT_CSV
+            </button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps py-stack-md border-2 border-outline hover:border-primary transition-colors flex items-center justify-center gap-2 active:translate-y-0.5 active:translate-x-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_sweep">delete_sweep</span> CLEAR_BUFFER
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full bg-surface-container-low border-t-2 border-outline px-stack-sm pb-safe flex justify-around items-center z-50">
+<!-- Node Tab -->
+<a class="flex flex-col items-center py-stack-sm px-4 text-on-surface-variant border-2 border-transparent hover:bg-surface-container-highest transition-transform hover:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="dns">dns</span>
+<span class="font-label-mono text-[10px] mt-1">NODES</span>
+</a>
+<!-- Logs Tab (Active) -->
+<a class="flex flex-col items-center py-stack-sm px-6 bg-primary text-on-primary border-2 border-black shadow-[4px_4px_0px_0px_rgba(255,94,7,1)] -translate-y-1" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-mono text-[10px] mt-1">LOGS</span>
+</a>
+<!-- Shell Tab -->
+<a class="flex flex-col items-center py-stack-sm px-4 text-on-surface-variant border-2 border-transparent hover:bg-surface-container-highest transition-transform hover:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-label-mono text-[10px] mt-1">SHELL</span>
+</a>
+<!-- Stats Tab -->
+<a class="flex flex-col items-center py-stack-sm px-4 text-on-surface-variant border-2 border-transparent hover:bg-surface-container-highest transition-transform hover:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-label-mono text-[10px] mt-1">STATS</span>
+</a>
+</nav>
+<!-- Footer Identity -->
+<footer class="fixed bottom-14 w-full px-gutter py-unit bg-surface-container-lowest border-t-2 border-outline flex justify-between items-center opacity-70 z-40">
+<span class="font-label-mono text-label-mono text-tertiary">SYSTEM_LOG_TERMINAL_V2.4_READY</span>
+<span class="font-label-caps text-label-caps text-secondary-container">ENCRYPTED_LINK</span>
+</footer>
+<script>
+        // Micro-interaction: Dynamic Log Simulation
+        const logData = [
+            { type: 'KERN', msg: 'HEARTBEAT_ACK FROM REGION_7', color: 'text-tertiary' },
+            { type: 'AUTH', msg: 'REMOTE_ACCESS_DENIED [IP: 192.168.1.1]', color: 'text-error' },
+            { type: 'NET', msg: 'BANDWIDTH_THROTTLE: APPLIED_0.5X', color: 'text-secondary-container' },
+            { type: 'SYS', msg: 'GARBAGE_COLLECTION_COMPLETED', color: 'text-on-surface' },
+            { type: 'APP', msg: 'METRICS_PUSH_SUCCESS', color: 'text-tertiary' }
+        ];
+
+        const dynamicLogs = document.getElementById('dynamic-logs');
+        const scrollArea = document.getElementById('log-output');
+
+        function addLog() {
+            const entry = logData[Math.floor(Math.random() * logData.length)];
+            const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+            
+            const logDiv = document.createElement('div');
+            logDiv.className = 'flex gap-3 opacity-0 transition-opacity duration-300';
+            logDiv.innerHTML = `
+                <span class="text-outline shrink-0">[${time}]</span>
+                <span class="${entry.color}">${entry.type}: ${entry.msg}</span>
+            `;
+            
+            dynamicLogs.appendChild(logDiv);
+            setTimeout(() => logDiv.classList.remove('opacity-0'), 10);
+            
+            // Auto-scroll logic
+            scrollArea.scrollTop = scrollArea.scrollHeight;
+
+            // Keep buffer clean
+            if (dynamicLogs.children.length > 20) {
+                dynamicLogs.removeChild(dynamicLogs.firstChild);
+            }
+        }
+
+        setInterval(addLog, 3500);
+
+        // Simple button interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const originalText = btn.innerText;
+                if(btn.innerText.includes('CSV')) {
+                    btn.innerText = 'PROCESSING...';
+                    setTimeout(() => btn.innerText = originalText, 1500);
+                }
+            });
+        });
+    </script>
+</body></html>
