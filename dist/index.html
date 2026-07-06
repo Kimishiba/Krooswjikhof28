@@ -95,7 +95,7 @@
   <div class="scanline pointer-events-none"></div>
   <div class="flex h-screen w-full">
     <!-- Side Navigation Shell -->
-    <aside class="h-screen w-64 border-r-2 border-outline bg-surface-container-low flex flex-col p-stack-md gap-stack-md shrink-0">
+    <aside class="hidden lg:flex h-screen w-64 border-r-2 border-outline bg-surface-container-low flex-col p-stack-md gap-stack-md shrink-0">
       <div class="mb-stack-lg">
         <div class="font-headline-md text-headline-md text-primary leading-tight">HOME_PORTAL //</div>
         <div class="font-label-caps text-label-caps text-outline">SYS_GATEWAY_V1.1</div>
@@ -168,9 +168,9 @@
         </div>
 
         <!-- Middle Row: Environment (Dynamic states) & Performance (Simulated metrics) -->
-        <div class="grid grid-cols-12 gap-gutter">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
           <!-- Left Panel: Smart Home Environment & Controls -->
-          <div class="col-span-8 bg-surface-container border-2 border-outline p-stack-lg brutalist-shadow-orange relative overflow-hidden">
+          <div class="lg:col-span-8 bg-surface-container border-2 border-outline p-stack-lg brutalist-shadow-orange relative overflow-hidden">
             <div class="flex justify-between items-start mb-6 border-b border-outline pb-4">
               <div>
                 <div class="font-label-caps text-label-caps text-secondary-container mb-unit">SMART HOME GATEWAY</div>
@@ -195,7 +195,7 @@
           </div>
 
           <!-- Right Panel: Infrastructure Performance stats -->
-          <div class="col-span-4 flex flex-col gap-gutter">
+          <div class="lg:col-span-4 flex flex-col gap-gutter">
             <!-- CPU Load widget -->
             <div class="bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex-grow flex flex-col">
               <div class="font-label-caps text-label-caps text-primary mb-stack-sm flex justify-between">
@@ -237,9 +237,9 @@
         </div>
 
         <!-- Bottom Row: Terminal Logs & Alerts -->
-        <div class="grid grid-cols-12 gap-gutter">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
           <!-- Terminal System Console -->
-          <div class="col-span-7 bg-black border-2 border-outline-variant p-stack-md font-label-mono text-label-mono text-primary h-64 overflow-hidden relative">
+          <div class="lg:col-span-7 bg-black border-2 border-outline-variant p-stack-md font-label-mono text-label-mono text-primary h-64 overflow-hidden relative">
             <div class="absolute top-stack-sm right-stack-sm flex gap-unit">
               <div class="w-3 h-3 bg-red-600"></div>
               <div class="w-3 h-3 bg-yellow-600"></div>
@@ -251,7 +251,7 @@
           </div>
 
           <!-- Pending Updates & Alerts -->
-          <div class="col-span-5 bg-surface-container border-2 border-outline p-stack-md h-64 flex flex-col">
+          <div class="lg:col-span-5 bg-surface-container border-2 border-outline p-stack-md h-64 flex flex-col">
             <div class="font-label-caps text-label-caps text-primary mb-stack-sm border-b-2 border-outline pb-unit flex justify-between">
               <span>SYSTEM ALERTS & UPDATES</span>
               <span id="alertsCount">0 ACTIVE</span>
@@ -270,7 +270,7 @@
           <button onclick="clearTerminal()" class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer bg-transparent border-none">CLEAR_BUFFER</button>
           <button onclick="simulateLogLine('PORTAL_DIAG: MANUAL_SCAN_TRIGGERED')" class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors cursor-pointer bg-transparent border-none">RUN_DIAGNOSTIC</button>
         </div>
-        <div id="phBlockStatus" class="font-label-caps text-label-caps text-secondary-container">PI-HOLE: ACTIVE (20.65% BLOCKED)</div>
+
       </footer>
     </main>
   </div>
@@ -323,10 +323,7 @@
             <label class="font-label-mono text-xs text-outline" for="prefixPlex">Plex</label>
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixPlex" placeholder="plex">
           </div>
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono text-xs text-outline" for="prefixPihole">Pi-hole</label>
-            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixPihole" placeholder="pihole">
-          </div>
+
           <div class="flex flex-col gap-1">
             <label class="font-label-mono text-xs text-outline" for="prefixNPM">Nginx Proxy Manager</label>
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixNPM" placeholder="npm">
@@ -334,6 +331,26 @@
           <div class="flex flex-col gap-1 col-span-2">
             <label class="font-label-mono text-xs text-outline" for="prefixProwlarr">Prowlarr</label>
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixProwlarr" placeholder="prowlarr">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixLazylibrarian">LazyLibrarian</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixLazylibrarian" placeholder="lazylibrarian">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixAudiobookshelf">Audiobookshelf</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAudiobookshelf" placeholder="audiobooks">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixAdguard">AdGuard Home</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAdguard" placeholder="adguard">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixCalibre">Calibre GUI</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixCalibre" placeholder="calibre">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixCalibreweb">Calibre Web</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixCalibreweb" placeholder="books">
           </div>
           <div class="flex flex-col gap-1 col-span-2">
             <label class="font-label-mono text-xs text-outline" for="haTokenInput">Home Assistant Access Token</label>
@@ -379,17 +396,26 @@
         sonarr: 'sonarr',
         radarr: 'radarr',
         unraid: 'unraid',
-        pihole: 'pihole',
         deluge: 'deluge',
         seerr: 'seerr',
         plex: 'plex',
         npm: 'npm',
-        prowlarr: 'prowlarr'
+        prowlarr: 'prowlarr',
+        lazylibrarian: 'lazylibrarian',
+        audiobookshelf: 'audiobooks',
+        adguard: 'adguard',
+        calibre: 'calibre',
+        calibreweb: 'books'
       }
     };
 
     if (domainSettings && !domainSettings.haToken) {
       domainSettings.haToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5MTdiOTFkMTAzZTE0NmQ1YWIyZTg3YjFlMzkyNjUzYyIsImlhdCI6MTc4MzE5OTMxNCwiZXhwIjoyMDk4NTU5MzE0fQ.oTQKsTCZf-IwYJyEwCzLcxx8ch7StRmvv3QzBkDHs4Q';
+    }
+    
+    if (domainSettings && domainSettings.prefixes && !domainSettings.prefixes.audiobookshelf) {
+      domainSettings.prefixes.audiobookshelf = 'audiobooks';
+      localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
     }
 
     // In-memory smart home states
@@ -399,15 +425,20 @@
     const services = [
       { id: 'ha', name: 'Home Assistant', desc: 'Home automation dashboard & supervisor', localUrl: 'http://192.168.1.41:8123', icon: 'ha-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>', tags: 'ha smart automation lighting' },
       { id: 'fluidd', name: 'Fluidd', desc: 'Klipper 3D printer web interface', localUrl: 'http://fluiddpi.local', icon: 'fluidd-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>', tags: '3d printer klipper mainsail octoprint' },
+      { id: 'seerr', name: 'Seerr', desc: 'Media requests & discovery platform', localUrl: 'http://tower.local:5055', icon: 'seerr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>', tags: 'seerr request overseerr jellyseerr media download discovery' },
       { id: 'sonarr', name: 'Sonarr', desc: 'TV series manager and calendar tracker', localUrl: 'http://tower.local:8989', icon: 'sonarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'sonarr media tv shows download torrent' },
       { id: 'radarr', name: 'Radarr', desc: 'Movies indexer and library status', localUrl: 'http://tower.local:7878', icon: 'radarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>', tags: 'radarr media movie downloads indexer' },
       { id: 'prowlarr', name: 'Prowlarr', desc: 'Torrent and Usenet indexer manager', localUrl: 'http://tower.local:9696', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>', tags: 'prowlarr indexer search torrent usenet media downloads' },
       { id: 'unraid', name: 'Unraid NAS', desc: 'Home storage server & Docker dashboard', localUrl: 'http://tower.local', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>', tags: 'unraid storage dockers servers' },
       { id: 'deluge', name: 'Deluge', desc: 'BitTorrent downloader client WebUI', localUrl: 'http://tower.local:8112', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>', tags: 'deluge torrent client download p2p storage' },
-      { id: 'seerr', name: 'Seerr', desc: 'Media requests & discovery platform', localUrl: 'http://tower.local:5055', icon: 'seerr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>', tags: 'seerr request overseerr jellyseerr media download discovery' },
       { id: 'plex', name: 'Plex', desc: 'Media server & streaming client WebUI', localUrl: 'http://tower.local:32400/web/index.html#!/', icon: 'plex-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><polygon points="12 8 16 12 12 16 12 8"/></svg>', tags: 'plex media server movie streaming play' },
       { id: 'npm', name: 'Nginx Proxy Manager', desc: 'Reverse proxy management dashboard', localUrl: 'http://tower.local:8181', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M12 8v8M5 16v-5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/></svg>', tags: 'npm proxy nginx reverse redirect network router' },
-      { id: 'pihole', name: 'Pi-hole DNS', desc: 'Ad-blocking and network request filters', localUrl: 'http://pihole.local/admin', icon: 'pihole-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>', tags: 'pihole dns adblock filters admin smart' }
+
+      { id: 'lazylibrarian', name: 'LazyLibrarian', desc: 'Book & Audiobook manager', localUrl: 'http://tower.local:5299', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'lazylibrarian books media audiobooks downloads library' },
+      { id: 'audiobookshelf', name: 'Audiobookshelf', desc: 'Audiobook and podcast server', localUrl: 'http://192.168.1.36:13378', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'audiobookshelf books media audiobooks podcasts player' },
+      { id: 'calibre', name: 'Calibre GUI', desc: 'E-book library manager and converter', localUrl: 'https://192.168.1.36:8182', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'calibre books media library reader' },
+      { id: 'calibreweb', name: 'Calibre Web', desc: 'Web app for browsing and reading ebooks', localUrl: 'http://192.168.1.36:8083', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>', tags: 'calibre-web books media reader kindle' },
+      { id: 'adguard', name: 'AdGuard Home', desc: 'Network-wide ad & tracker blocker', localUrl: 'http://192.168.1.53:80', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>', tags: 'adguard dns pihole blocker ads network' }
     ];
 
     // Initialize application
@@ -610,7 +641,9 @@
         card.id = 'service-card-' + s.id;
         card.href = url;
         card.target = '_blank';
-        card.className = 'bg-surface-container border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit hover-press';
+        const isTopThree = ['ha', 'fluidd', 'seerr'].includes(s.id);
+        const bgClass = isTopThree ? 'bg-outline-variant' : 'bg-surface-container-high';
+        card.className = `${bgClass} border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit hover-press`;
         card.setAttribute('data-name', s.tags);
         
         // Show status subtext / config info
@@ -730,12 +763,17 @@
       document.getElementById('prefixSonarr').value = domainSettings.prefixes.sonarr !== undefined ? domainSettings.prefixes.sonarr : 'sonarr';
       document.getElementById('prefixRadarr').value = domainSettings.prefixes.radarr !== undefined ? domainSettings.prefixes.radarr : 'radarr';
       document.getElementById('prefixUnraid').value = domainSettings.prefixes.unraid !== undefined ? domainSettings.prefixes.unraid : 'unraid';
-      document.getElementById('prefixPihole').value = domainSettings.prefixes.pihole !== undefined ? domainSettings.prefixes.pihole : 'pihole';
+
       document.getElementById('prefixDeluge').value = domainSettings.prefixes.deluge !== undefined ? domainSettings.prefixes.deluge : 'deluge';
       document.getElementById('prefixSeerr').value = domainSettings.prefixes.seerr !== undefined ? domainSettings.prefixes.seerr : 'seerr';
       document.getElementById('prefixPlex').value = domainSettings.prefixes.plex !== undefined ? domainSettings.prefixes.plex : 'plex';
       document.getElementById('prefixNPM').value = domainSettings.prefixes.npm !== undefined ? domainSettings.prefixes.npm : 'npm';
       document.getElementById('prefixProwlarr').value = domainSettings.prefixes.prowlarr !== undefined ? domainSettings.prefixes.prowlarr : 'prowlarr';
+      document.getElementById('prefixLazylibrarian').value = domainSettings.prefixes.lazylibrarian !== undefined ? domainSettings.prefixes.lazylibrarian : 'lazylibrarian';
+      document.getElementById('prefixAudiobookshelf').value = domainSettings.prefixes.audiobookshelf !== undefined ? domainSettings.prefixes.audiobookshelf : 'audiobooks';
+      document.getElementById('prefixAdguard').value = domainSettings.prefixes.adguard !== undefined ? domainSettings.prefixes.adguard : 'adguard';
+      document.getElementById('prefixCalibre').value = domainSettings.prefixes.calibre !== undefined ? domainSettings.prefixes.calibre : 'calibre';
+      document.getElementById('prefixCalibreweb').value = domainSettings.prefixes.calibreweb !== undefined ? domainSettings.prefixes.calibreweb : 'books';
       document.getElementById('haTokenInput').value = domainSettings.haToken !== undefined ? domainSettings.haToken : '';
       
       document.getElementById('settingsModal').classList.add('active');
@@ -757,12 +795,17 @@
           sonarr: document.getElementById('prefixSonarr').value.trim(),
           radarr: document.getElementById('prefixRadarr').value.trim(),
           unraid: document.getElementById('prefixUnraid').value.trim(),
-          pihole: document.getElementById('prefixPihole').value.trim(),
+
           deluge: document.getElementById('prefixDeluge').value.trim(),
           seerr: document.getElementById('prefixSeerr').value.trim(),
           plex: document.getElementById('prefixPlex').value.trim(),
           npm: document.getElementById('prefixNPM').value.trim(),
-          prowlarr: document.getElementById('prefixProwlarr').value.trim()
+          prowlarr: document.getElementById('prefixProwlarr').value.trim(),
+          lazylibrarian: document.getElementById('prefixLazylibrarian').value.trim(),
+          audiobookshelf: document.getElementById('prefixAudiobookshelf').value.trim(),
+          adguard: document.getElementById('prefixAdguard').value.trim(),
+          calibre: document.getElementById('prefixCalibre').value.trim(),
+          calibreweb: document.getElementById('prefixCalibreweb').value.trim()
         }
       };
 
