@@ -1,0 +1,14 @@
+- id: 'notify_pixel_when_print_finished'
+  alias: Notify Pixel when print finishes
+  description: 'Sends a notification to the Pixel phone when the 3D printer finishes'
+  trigger:
+    - platform: state
+      entity_id: sensor.moonraker_current_print_state
+      to: 'Complete'
+  condition: []
+  action:
+    - service: notify.mobile_app_pixel_10
+      data:
+        message: 'Your 3D print has successfully finished!'
+        title: '3D Printer'
+  mode: single
