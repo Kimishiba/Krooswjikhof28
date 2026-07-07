@@ -341,6 +341,10 @@
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAudiobookshelf" placeholder="audiobooks">
           </div>
           <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixAudiobookbay">AudiobookBay Automated</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAudiobookbay" placeholder="abb">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
             <label class="font-label-mono text-xs text-outline" for="prefixAdguard">AdGuard Home</label>
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAdguard" placeholder="adguard">
           </div>
@@ -396,6 +400,7 @@
         prowlarr: 'prowlarr',
         lazylibrarian: 'lazylibrarian',
         audiobookshelf: 'audiobooks',
+        audiobookbay: 'abb',
         adguard: 'adguard'
       }
     };
@@ -406,6 +411,10 @@
     
     if (domainSettings && domainSettings.prefixes && !domainSettings.prefixes.audiobookshelf) {
       domainSettings.prefixes.audiobookshelf = 'audiobooks';
+      localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
+    }
+    if (domainSettings && domainSettings.prefixes && !domainSettings.prefixes.audiobookbay) {
+      domainSettings.prefixes.audiobookbay = 'abb';
       localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
     }
 
@@ -427,6 +436,7 @@
 
       { id: 'lazylibrarian', name: 'LazyLibrarian', desc: 'Book & Audiobook manager', localUrl: 'http://tower.local:5299', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'lazylibrarian books media audiobooks downloads library' },
       { id: 'audiobookshelf', name: 'Audiobookshelf', desc: 'Audiobook and podcast server', localUrl: 'http://192.168.1.36:13378', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'audiobookshelf books media audiobooks podcasts player' },
+      { id: 'audiobookbay', name: 'AudiobookBay Automated', desc: 'AudiobookBay search and download', localUrl: 'http://192.168.1.36:5078', icon: 'book-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'audiobookbay books media audiobooks downloads search' },
       { id: 'adguard', name: 'AdGuard Home', desc: 'Network-wide ad & tracker blocker', localUrl: 'http://192.168.1.53:80', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>', tags: 'adguard dns pihole blocker ads network' }
     ];
 
@@ -760,6 +770,7 @@
       document.getElementById('prefixProwlarr').value = domainSettings.prefixes.prowlarr !== undefined ? domainSettings.prefixes.prowlarr : 'prowlarr';
       document.getElementById('prefixLazylibrarian').value = domainSettings.prefixes.lazylibrarian !== undefined ? domainSettings.prefixes.lazylibrarian : 'lazylibrarian';
       document.getElementById('prefixAudiobookshelf').value = domainSettings.prefixes.audiobookshelf !== undefined ? domainSettings.prefixes.audiobookshelf : 'audiobooks';
+      document.getElementById('prefixAudiobookbay').value = domainSettings.prefixes.audiobookbay !== undefined ? domainSettings.prefixes.audiobookbay : 'abb';
       document.getElementById('prefixAdguard').value = domainSettings.prefixes.adguard !== undefined ? domainSettings.prefixes.adguard : 'adguard';
       document.getElementById('haTokenInput').value = domainSettings.haToken !== undefined ? domainSettings.haToken : '';
       
@@ -790,6 +801,7 @@
           prowlarr: document.getElementById('prefixProwlarr').value.trim(),
           lazylibrarian: document.getElementById('prefixLazylibrarian').value.trim(),
           audiobookshelf: document.getElementById('prefixAudiobookshelf').value.trim(),
+          audiobookbay: document.getElementById('prefixAudiobookbay').value.trim(),
           adguard: document.getElementById('prefixAdguard').value.trim()
         }
       };
