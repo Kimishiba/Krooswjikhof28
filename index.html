@@ -639,7 +639,6 @@
         const card = document.createElement('a');
         card.id = 'service-card-' + s.id;
         card.href = url;
-        card.target = '_blank';
         const isTopThree = ['ha', 'fluidd', 'seerr'].includes(s.id);
         const bgClass = isTopThree ? 'bg-outline-variant' : 'bg-surface-container-high';
         card.className = `${bgClass} border-2 border-outline p-stack-md brutalist-shadow-blue flex flex-col gap-unit hover-press`;
