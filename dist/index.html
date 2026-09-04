@@ -337,6 +337,10 @@
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixLazylibrarian" placeholder="lazylibrarian">
           </div>
           <div class="flex flex-col gap-1 col-span-2">
+            <label class="font-label-mono text-xs text-outline" for="prefixLidarr">Lidarr (Music)</label>
+            <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixLidarr" placeholder="lidarr">
+          </div>
+          <div class="flex flex-col gap-1 col-span-2">
             <label class="font-label-mono text-xs text-outline" for="prefixAudiobookshelf">Audiobookshelf</label>
             <input class="bg-black border-2 border-outline p-1.5 font-label-mono text-label-mono text-on-surface focus:border-primary focus:ring-0" type="text" id="prefixAudiobookshelf" placeholder="audiobooks">
           </div>
@@ -399,6 +403,7 @@
         npm: 'npm',
         prowlarr: 'prowlarr',
         lazylibrarian: 'lazylibrarian',
+        lidarr: 'lidarr',
         audiobookshelf: 'audiobooks',
         audiobookbay: 'abb',
         adguard: 'adguard'
@@ -409,6 +414,10 @@
       domainSettings.haToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5MTdiOTFkMTAzZTE0NmQ1YWIyZTg3YjFlMzkyNjUzYyIsImlhdCI6MTc4MzE5OTMxNCwiZXhwIjoyMDk4NTU5MzE0fQ.oTQKsTCZf-IwYJyEwCzLcxx8ch7StRmvv3QzBkDHs4Q';
     }
     
+    if (domainSettings && domainSettings.prefixes && !domainSettings.prefixes.lidarr) {
+      domainSettings.prefixes.lidarr = 'lidarr';
+      localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
+    }
     if (domainSettings && domainSettings.prefixes && !domainSettings.prefixes.audiobookshelf) {
       domainSettings.prefixes.audiobookshelf = 'audiobooks';
       localStorage.setItem('portal_domain_settings', JSON.stringify(domainSettings));
@@ -428,6 +437,7 @@
       { id: 'seerr', name: 'Seerr', desc: 'Media requests & discovery platform', localUrl: 'http://tower.local:5055', icon: 'seerr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>', tags: 'seerr request overseerr jellyseerr media download discovery' },
       { id: 'sonarr', name: 'Sonarr', desc: 'TV series manager and calendar tracker', localUrl: 'http://tower.local:8989', icon: 'sonarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', tags: 'sonarr media tv shows download torrent' },
       { id: 'radarr', name: 'Radarr', desc: 'Movies indexer and library status', localUrl: 'http://tower.local:7878', icon: 'radarr-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>', tags: 'radarr media movie downloads indexer' },
+      { id: 'lidarr', name: 'Lidarr', desc: 'Music collection manager and album tracker', localUrl: 'http://tower.local:8686', icon: 'music-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>', tags: 'lidarr media music download audio torrent' },
       { id: 'prowlarr', name: 'Prowlarr', desc: 'Torrent and Usenet indexer manager', localUrl: 'http://tower.local:9696', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>', tags: 'prowlarr indexer search torrent usenet media downloads' },
       { id: 'unraid', name: 'Unraid NAS', desc: 'Home storage server & Docker dashboard', localUrl: 'http://tower.local', icon: 'router-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>', tags: 'unraid storage dockers servers' },
       { id: 'deluge', name: 'Deluge', desc: 'BitTorrent downloader client WebUI', localUrl: 'http://tower.local:8112', icon: 'torrent-color', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>', tags: 'deluge torrent client download p2p storage' },
@@ -768,6 +778,7 @@
       document.getElementById('prefixNPM').value = domainSettings.prefixes.npm !== undefined ? domainSettings.prefixes.npm : 'npm';
       document.getElementById('prefixProwlarr').value = domainSettings.prefixes.prowlarr !== undefined ? domainSettings.prefixes.prowlarr : 'prowlarr';
       document.getElementById('prefixLazylibrarian').value = domainSettings.prefixes.lazylibrarian !== undefined ? domainSettings.prefixes.lazylibrarian : 'lazylibrarian';
+      document.getElementById('prefixLidarr').value = domainSettings.prefixes.lidarr !== undefined ? domainSettings.prefixes.lidarr : 'lidarr';
       document.getElementById('prefixAudiobookshelf').value = domainSettings.prefixes.audiobookshelf !== undefined ? domainSettings.prefixes.audiobookshelf : 'audiobooks';
       document.getElementById('prefixAudiobookbay').value = domainSettings.prefixes.audiobookbay !== undefined ? domainSettings.prefixes.audiobookbay : 'abb';
       document.getElementById('prefixAdguard').value = domainSettings.prefixes.adguard !== undefined ? domainSettings.prefixes.adguard : 'adguard';
@@ -799,6 +810,7 @@
           npm: document.getElementById('prefixNPM').value.trim(),
           prowlarr: document.getElementById('prefixProwlarr').value.trim(),
           lazylibrarian: document.getElementById('prefixLazylibrarian').value.trim(),
+          lidarr: document.getElementById('prefixLidarr').value.trim(),
           audiobookshelf: document.getElementById('prefixAudiobookshelf').value.trim(),
           audiobookbay: document.getElementById('prefixAudiobookbay').value.trim(),
           adguard: document.getElementById('prefixAdguard').value.trim()
